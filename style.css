@@ -559,8 +559,221 @@ body {
 .input-comentario-wrapper input:focus {
     border-color: var(--azul-royal);
 }
+/* 6. Bloco Destaque - Indicador IAF 2027 */
+.bloco-iaf {
+    background-color: var(--off-white);
+    padding: 30px 5% 60px;
+}
+
+.card-iaf-destaque {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--azul-marinho) 0%, #04294b 100%);
+    border-radius: 14px;
+    padding: 36px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(1, 30, 56, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Detalhe de iluminação suave de fundo */
+.card-iaf-destaque::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: var(--azul-royal);
+    filter: blur(80px);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.conteudo-iaf {
+    flex: 1.3;
+    z-index: 1;
+}
+
+.tag-iaf {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 188, 130, 0.12);
+    border: 1px solid rgba(255, 188, 130, 0.25);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.tag-iaf span:last-child {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--salmao);
+}
+
+.ponto-iaf {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--salmao);
+    box-shadow: 0 0 6px var(--salmao);
+}
+
+.conteudo-iaf h2 {
+    color: var(--off-white);
+    font-size: 1.55rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.conteudo-iaf p {
+    color: rgba(245, 241, 235, 0.82);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    max-width: 580px;
+}
+
+.chips-iaf {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.chip-item {
+    font-size: 0.75rem;
+    color: var(--off-white);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.btn-iaf-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--salmao);
+    color: var(--azul-marinho);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 10px 22px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.btn-iaf-cta:hover {
+    background-color: #ffd0a3;
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(255, 188, 130, 0.3);
+}
+
+/* Card decorativo de prévia (lado direito) */
+.visual-iaf {
+    flex: 0.8;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.card-previa-metas {
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 260px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.topo-previa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.badge-ano {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--salmao);
+    text-transform: uppercase;
+}
+
+.status-ativa {
+    font-size: 0.65rem;
+    background-color: rgba(38, 79, 236, 0.3);
+    color: var(--off-white);
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(38, 79, 236, 0.5);
+}
+
+.card-previa-metas h4 {
+    color: var(--off-white);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.card-previa-metas p {
+    font-size: 0.75rem;
+    color: rgba(245, 241, 235, 0.65);
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+.barra-base {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.barra-valor {
+    width: 85%;
+    height: 100%;
+    background-color: var(--salmao);
+    border-radius: 3px;
+}
+
+.texto-meta {
+    font-size: 0.68rem;
+    color: rgba(245, 241, 235, 0.75);
+    display: block;
+    font-weight: 500;
+}
 /* Responsividade para celulares */
 @media (max-width: 768px) {
     .bloco-diretoria { flex-direction: column; text-align: center; }
     .lista-menu { display: none; /* Em telas pequenas, precisaremos de um menu hambúrguer */ }
 }
+.card-iaf-destaque {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 26px 20px;
+        gap: 24px;
+    }
+
+    .visual-iaf {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .card-previa-metas {
+        max-width: 100%;
+    }
