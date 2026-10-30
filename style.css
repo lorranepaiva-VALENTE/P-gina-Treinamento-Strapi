@@ -69,35 +69,68 @@ body {
     color: var(--salmao); 
 }
 
-/* 2. Banner Rotativo - Ajuste para ficar por trás do menu */
+/* 2. Banner Rotativo - Laterais Infinitas e Transição Suave */
 .banner-rotativo {
     position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 40px auto; /* A margem superior '0' faz o banner subir e ficar embaixo do menu */
+    width: 100%; /* Laterais infinitas preenchendo a tela toda */
+    max-width: 100%; 
+    height: 450px; /* Define uma altura menor e mais elegante */
+    margin: 0; /* Cola no topo da página, sob o menu */
     overflow: hidden;
-    border-radius: 0 0 12px 12px; /* Arredonda apenas a base do banner */
 }
 
-.slide { display: none; width: 100%; }
-.slide.ativa { display: block; }
-.slide img { width: 100%; height: auto; display: block; }
+.slide { 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+}
+.slide.ativa { 
+    display: block; 
+}
 
+/* O object-fit garante que a imagem não achate, cortando as sobras como uma moldura */
+.slide img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; /* Mantém o foco no centro da imagem */
+    display: block; 
+}
+
+/* Efeito de degradê (sombreado) na base do banner para fundir com a página */
+.banner-rotativo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Altura do efeito de transição */
+    background: linear-gradient(to bottom, rgba(245, 241, 235, 0) 0%, var(--off-white) 100%);
+    pointer-events: none; /* Garante que o degradê não bloqueie os cliques */
+}
+
+/* Ajuste das setas para as laterais do ecrã */
 .seta {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(1, 30, 56, 0.5); /* Setas semi-transparentes */
+    background-color: rgba(1, 30, 56, 0.4); 
     color: var(--off-white); 
     border: none;
-    padding: 16px;
+    padding: 12px 18px;
     cursor: pointer;
-    border-radius: 50%;
-    transition: 0.3s;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(4px); /* Efeito de vidro também nas setas */
 }
-.seta:hover { background-color: var(--azul-royal); }
-.seta-esq { left: 16px; }
-.seta-dir { right: 16px; }
+
+.seta:hover { 
+    background-color: var(--azul-royal); 
+    padding: 12px 24px; /* Efeito do botão esticando levemente ao passar o mouse */
+}
+.seta-esq { left: 30px; }
+.seta-dir { right: 30px; }
 
 /* 3. Bloco Diretoria (Design Profissional) */
 .bloco-diretoria {
