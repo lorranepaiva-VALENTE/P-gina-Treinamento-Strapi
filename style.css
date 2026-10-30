@@ -173,6 +173,114 @@ body {
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(1, 30, 56, 0.1); 
 }
+/* 4. Modelos de Atendimento (Rolagem Horizontal) */
+.modelos-atendimento {
+    background-color: var(--azul-marinho); 
+    padding: 80px 5%;
+    color: var(--off-white);
+}
+
+.cabecalho-modelos {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cabecalho-modelos h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.cabecalho-modelos p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Transformação para rolagem horizontal (Swipe/Scroll) */
+.carrossel-cards-modelos {
+    display: flex;
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow-x: auto; /* Permite arrastar para o lado */
+    padding-bottom: 24px; /* Espaço para a barra de rolagem */
+    scroll-snap-type: x mandatory; /* Cria o efeito de imã ao arrastar */
+}
+
+/* Estilização da barra de rolagem (Visível em computadores) */
+.carrossel-cards-modelos::-webkit-scrollbar {
+    height: 10px;
+}
+.carrossel-cards-modelos::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 8px;
+}
+.carrossel-cards-modelos::-webkit-scrollbar-thumb {
+    background-color: var(--salmao); /* Usa a cor salmão do Brand Book */
+    border-radius: 8px;
+}
+
+.card-modelo {
+    flex: 0 0 300px; /* Fixa o tamanho do card em 300px de largura */
+    scroll-snap-align: start; /* Ponto de imã para alinhamento perfeito */
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-modelo:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-modelo img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.conteudo-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+}
+
+.conteudo-card h3 {
+    color: var(--azul-marinho);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.conteudo-card p {
+    color: rgba(1, 30, 56, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    flex: 1; 
+}
+
+.btn-acesso {
+    display: block;
+    text-align: center;
+    background-color: var(--azul-royal);
+    color: var(--off-white);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-acesso:hover {
+    background-color: var(--salmao);
+    color: var(--azul-marinho);
+}
 /* Responsividade para celulares */
 @media (max-width: 768px) {
     .bloco-diretoria { flex-direction: column; text-align: center; }
