@@ -30,3 +30,44 @@ function resetarIntervalo() {
 
 // Inicia o carrossel assim que a página carrega
 autoPlay();
+// Interação de Curtida (Like com animação e incremento)
+function alternarCurtida(botao) {
+    const contador = botao.querySelector('.contagem-curtidas');
+    let numero = parseInt(contador.innerText);
+
+    if (botao.classList.contains('curtido')) {
+        botao.classList.remove('curtido');
+        contador.innerText = numero - 1;
+    } else {
+        botao.classList.add('curtido');
+        contador.innerText = numero + 1;
+    }
+}
+
+// Expande ou recolhe o campo de comentário
+function alternarCaixaComentario(botao) {
+    const card = botao.closest('.conteudo-post');
+    const area = card.querySelector('.area-comentarios');
+    
+    if (area.style.display === 'none' || area.style.display === '') {
+        area.style.display = 'block';
+        area.querySelector('input').focus();
+    } else {
+        area.style.display = 'none';
+    }
+}
+
+// Insere o comentário na lista ao pressionar 'Enter'
+function enviarComentario(evento, input) {
+    if (evento.key === 'Enter' && input.value.trim() !== '') {
+        const area = input.closest('.area-comentarios');
+        const lista = area.querySelector('.lista-comentarios');
+        
+        const novoComentario = document.createElement('div');
+        novoComentario.className = 'item-comentario';
+        novoComentario.innerText = input.value.trim();
+        
+        lista.appendChild(novoComentario);
+        input.value = '';
+    }
+}

@@ -126,6 +126,128 @@
             </div>
         </div>
     </section>
+    <!-- 5. Feed de Notícias -->
+    <section class="feed-noticias" id="feed-noticias">
+        <div class="cabecalho-feed">
+            <span class="subtitulo-destaque">Atualizações Rápidas</span>
+            <h2>Feed de Notícias do Treinamento</h2>
+            <p>Novidades, lançamentos de campanhas e comunicados diretos para a rotina de loja.</p>
+        </div>
+
+        <div class="grade-noticias">
+            <!-- Card 1 -->
+            <article class="card-post">
+                <div class="imagem-post">
+                    <span class="badge-post novidade">Novidade</span>
+                    <img src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=600&q=80" alt="Treinamento IAF 2026">
+                </div>
+                <div class="conteudo-post">
+                    <div class="meta-post">
+                        <span>1 min de leitura</span> • <span>Hoje</span>
+                    </div>
+                    <h3>Atualizações prioritárias no indicador IAF</h3>
+                    <p>Confira a revisão completa dos critérios de avaliação de capacitação para as operações de loja deste ciclo.</p>
+                    
+                    <div class="barra-interacoes">
+                        <button class="btn-interacao btn-curtir" onclick="alternarCurtida(this)">
+                            <svg class="icone-coracao" viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            <span class="contagem-curtidas">24</span>
+                        </button>
+                        <button class="btn-interacao btn-comentar" onclick="alternarCaixaComentario(this)">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                            <span>Comentar</span>
+                        </button>
+                    </div>
+
+                    <!-- Caixa retrátil de comentários -->
+                    <div class="area-comentarios" style="display: none;">
+                        <div class="lista-comentarios"></div>
+                        <div class="input-comentario-wrapper">
+                            <input type="text" placeholder="Escreva um comentário..." onkeypress="enviarComentario(event, this)">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card-post">
+                <div class="imagem-post">
+                    <span class="badge-post campanha">Campanha</span>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Nova Trilha Maestria">
+                </div>
+                <div class="conteudo-post">
+                    <div class="meta-post">
+                        <span>2 min de leitura</span> • <span>Ontem</span>
+                    </div>
+                    <h3>Nova Trilha Maestria liberada no Unibê</h3>
+                    <p>Módulos objetivos e práticos focados em técnicas de consultoria de perfumaria e atendimento consultivo.</p>
+                    
+                    <div class="barra-interacoes">
+                        <button class="btn-interacao btn-curtir" onclick="alternarCurtida(this)">
+                            <svg class="icone-coracao" viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            <span class="contagem-curtidas">42</span>
+                        </button>
+                        <button class="btn-interacao btn-comentar" onclick="alternarCaixaComentario(this)">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                            <span>Comentar</span>
+                        </button>
+                    </div>
+
+                    <div class="area-comentarios" style="display: none;">
+                        <div class="lista-comentarios"></div>
+                        <div class="input-comentario-wrapper">
+                            <input type="text" placeholder="Escreva um comentário..." onkeypress="enviarComentario(event, this)">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card-post">
+                <div class="imagem-post">
+                    <span class="badge-post destaque">Dica de Bolso</span>
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Dica Rápida de Vendas">
+                </div>
+                <div class="conteudo-post">
+                    <div class="meta-post">
+                        <span>30 seg de leitura</span> • <span>Há 2 dias</span>
+                    </div>
+                    <h3>3 passos para contornar objeções no balcão</h3>
+                    <p>Guia relâmpago de escuta ativa e direcionamento de produto na hora do fechamento da compra.</p>
+                    
+                    <div class="barra-interacoes">
+                        <button class="btn-interacao btn-curtir" onclick="alternarCurtida(this)">
+                            <svg class="icone-coracao" viewBox="0 0 24 24" width="20" height="20">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            <span class="contagem-curtidas">67</span>
+                        </button>
+                        <button class="btn-interacao btn-comentar" onclick="alternarCaixaComentario(this)">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                            <span>Comentar</span>
+                        </button>
+                    </div>
+
+                    <div class="area-comentarios" style="display: none;">
+                        <div class="lista-comentarios"></div>
+                        <div class="input-comentario-wrapper">
+                            <input type="text" placeholder="Escreva um comentário..." onkeypress="enviarComentario(event, this)">
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
     <!-- Conexão com o ficheiro de scripts (JavaScript) NO FINAL DA PÁGINA -->
     <script src="app.js"></script>
     </body>
