@@ -28,23 +28,34 @@ function resetarIntervalo() {
     autoPlay();
 }
 
-// Inicia o carrossel assim que a página carrega
-autoPlay();
-// Interação de Curtida (Like com animação e incremento)
-function alternarCurtida(botao) {
+// Rolagem pelas setas do feed
+function rolarFeed(direcao) {
+    const carrossel = document.getElementById('carrosselNoticias');
+    const larguraCard = 266; // 250px largura + 16px de espaçamento
+    carrossel.scrollBy({
+        left: direcao * larguraCard,
+        behavior: 'smooth'
+    });
+}
+
+// Alternar Curtida com ponto de rastreamento
+function alternarCurtida(botao, idPost) {
     const contador = botao.querySelector('.contagem-curtidas');
     let numero = parseInt(contador.innerText);
+    const estaCurtido = botao.classList.contains('curtido');
 
-    if (botao.classList.contains('curtido')) {
+    if (estaCurtido) {
         botao.classList.remove('curtido');
         contador.innerText = numero - 1;
+        registrarEngajamento(idPost, 'descurtir');
     } else {
         botao.classList.add('curtido');
         contador.innerText = numero + 1;
+        registrarEngajamento(idPost, 'curtir');
     }
 }
 
-// Expande ou recolhe o campo de comentário
+// Alternar caixa de comentários
 function alternarCaixaComentario(botao) {
     const card = botao.closest('.conteudo-post');
     const area = card.querySelector('.area-comentarios');
@@ -57,17 +68,41 @@ function alternarCaixaComentario(botao) {
     }
 }
 
-// Insere o comentário na lista ao pressionar 'Enter'
-function enviarComentario(evento, input) {
+// Inserir comentário com ponto de coleta
+function enviarComentario(evento, input, idPost) {
     if (evento.key === 'Enter' && input.value.trim() !== '') {
+        const texto = input.value.trim();
         const area = input.closest('.area-comentarios');
         const lista = area.querySelector('.lista-comentarios');
         
         const novoComentario = document.createElement('div');
         novoComentario.className = 'item-comentario';
-        novoComentario.innerText = input.value.trim();
+        novoComentario.innerText = texto;
         
         lista.appendChild(novoComentario);
         input.value = '';
+
+        registrarEngajamento(idPost, 'comentario', texto);
     }
+}
+
+// Função de telemetria / rastreamento para conectar à API corporativa
+function registrarEngajamento(idPost, tipoAcao, conteudo = '') {
+    const dadosRastreamento = {
+        postId: idPost,
+        acao: tipoAcao,
+        comentario: conteudo,
+        dataHora: new Date().toISOString()
+    };
+
+    console.log("Rastreamento coletado:", dadosRastreamento);
+
+    /* 
+    Exemplo de conexão futura com Power Automate ou endpoint interno:
+    fetch('https://sua-url-de-webhook-boticario.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dadosRastreamento)
+    });
+    */
 }

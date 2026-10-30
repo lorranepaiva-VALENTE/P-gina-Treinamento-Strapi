@@ -285,67 +285,109 @@ body {
     background-color: var(--salmao);
     color: var(--azul-marinho);
 }
-/* 5. Feed de Notícias Corporativo */
+/* 5. Feed de Notícias Compacto com Setas */
 .feed-noticias {
     background-color: var(--off-white);
-    padding: 70px 5%;
+    padding: 45px 5%;
 }
 
 .cabecalho-feed {
     max-width: 1200px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .subtitulo-destaque {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     color: var(--azul-royal);
-    display: inline-block;
-    margin-bottom: 6px;
+    display: block;
+    margin-bottom: 4px;
 }
 
 .cabecalho-feed h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--azul-marinho);
     font-weight: 500;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .cabecalho-feed p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: rgba(1, 30, 56, 0.7);
+    margin: 0;
 }
 
-.grade-noticias {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: 28px;
+/* Setas de Controle */
+.controles-feed {
+    display: flex;
+    gap: 8px;
+}
+
+.seta-feed {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(1, 30, 56, 0.2);
+    background-color: #ffffff;
+    color: var(--azul-marinho);
+    font-size: 1.2rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.seta-feed:hover {
+    background-color: var(--azul-marinho);
+    color: var(--off-white);
+    border-color: var(--azul-marinho);
+}
+
+/* Trilho com rolagem fluida */
+.carrossel-noticias {
+    display: flex;
+    gap: 16px;
     max-width: 1200px;
     margin: 0 auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 4px 18px 4px;
+    scrollbar-width: none; /* Oculta a barra padrão no Firefox */
 }
 
+.carrossel-noticias::-webkit-scrollbar {
+    display: none; /* Oculta a barra padrão no Chrome/Safari */
+}
+
+/* Cards em escala bem compacta */
 .card-post {
+    flex: 0 0 250px; /* Largura reduzida para 250px */
     background: #ffffff;
-    border-radius: 14px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(1, 30, 56, 0.05);
+    box-shadow: 0 4px 14px rgba(1, 30, 56, 0.06);
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(1, 30, 56, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-post:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 32px rgba(1, 30, 56, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(1, 30, 56, 0.1);
 }
 
 .imagem-post {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: 125px; /* Foto mais estreita e clean */
 }
 
 .imagem-post img {
@@ -356,14 +398,14 @@ body {
 
 .badge-post {
     position: absolute;
-    top: 14px;
-    left: 14px;
-    font-size: 0.75rem;
+    top: 8px;
+    left: 8px;
+    font-size: 0.65rem;
     font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 20px;
+    padding: 3px 8px;
+    border-radius: 12px;
     color: #ffffff;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 .badge-post.novidade { background-color: var(--azul-royal); }
@@ -371,56 +413,56 @@ body {
 .badge-post.destaque { background-color: var(--salmao); color: var(--azul-marinho); }
 
 .conteudo-post {
-    padding: 20px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
 .meta-post {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     color: rgba(1, 30, 56, 0.5);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 500;
 }
 
 .conteudo-post h3 {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     color: var(--azul-marinho);
-    margin-bottom: 8px;
-    line-height: 1.35;
+    margin-bottom: 6px;
+    line-height: 1.3;
     font-weight: 500;
 }
 
 .conteudo-post p {
-    font-size: 0.88rem;
-    color: rgba(1, 30, 56, 0.75);
-    line-height: 1.5;
-    margin-bottom: 18px;
+    font-size: 0.8rem;
+    color: rgba(1, 30, 56, 0.72);
+    line-height: 1.4;
+    margin-bottom: 12px;
     flex: 1;
 }
 
-/* Barra de Ações (Like e Comentário) */
+/* Interações compactas */
 .barra-interacoes {
     display: flex;
-    gap: 12px;
-    padding-top: 14px;
+    gap: 8px;
+    padding-top: 10px;
     border-top: 1px solid rgba(1, 30, 56, 0.08);
 }
 
 .btn-interacao {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     background: transparent;
     border: none;
     font-family: inherit;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 500;
     color: rgba(1, 30, 56, 0.65);
     cursor: pointer;
-    padding: 6px 10px;
-    border-radius: 6px;
+    padding: 4px 6px;
+    border-radius: 4px;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -429,7 +471,6 @@ body {
     color: var(--azul-marinho);
 }
 
-/* Estilo do Coração */
 .icone-coracao {
     fill: none;
     stroke: rgba(1, 30, 56, 0.65);
@@ -449,43 +490,42 @@ body {
 
 @keyframes pulsoCoracao {
     0% { transform: scale(1); }
-    50% { transform: scale(1.3); }
+    50% { transform: scale(1.25); }
     100% { transform: scale(1); }
 }
 
-/* Área de Comentários Inline */
+/* Comentários Inline Compactos */
 .area-comentarios {
-    margin-top: 14px;
-    padding-top: 12px;
+    margin-top: 10px;
+    padding-top: 8px;
     border-top: 1px dashed rgba(1, 30, 56, 0.1);
 }
 
 .lista-comentarios {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    margin-bottom: 10px;
-    max-height: 120px;
+    gap: 4px;
+    margin-bottom: 8px;
+    max-height: 90px;
     overflow-y: auto;
 }
 
 .item-comentario {
-    font-size: 0.8rem;
+    font-size: 0.74rem;
     background-color: var(--off-white);
-    padding: 6px 10px;
-    border-radius: 6px;
+    padding: 4px 8px;
+    border-radius: 4px;
     color: var(--azul-marinho);
 }
 
 .input-comentario-wrapper input {
     width: 100%;
-    padding: 8px 12px;
+    padding: 6px 10px;
     border: 1px solid rgba(1, 30, 56, 0.15);
-    border-radius: 20px;
+    border-radius: 14px;
     font-family: inherit;
-    font-size: 0.82rem;
+    font-size: 0.75rem;
     outline: none;
-    background: #ffffff;
     box-sizing: border-box;
 }
 
