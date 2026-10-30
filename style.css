@@ -13,52 +13,89 @@ body {
     background-color: var(--off-white);
     color: var(--azul-marinho);
 }
-/* 1. Cabeçalho Flutuante */
+/* 1. Cabeçalho Flutuante - Visual Sofisticado e Menor */
 .header-flutuante {
-    position: fixed;
-    top: 30px;
+    position: fixed; /* Mantém o menu fixo enquanto rola a página */
+    top: 20px; /* Mais próximo ao topo */
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--azul-marinho); /* #011E38[cite: 87] */
+    background-color: rgba(1, 30, 56, 0.65); /* Azul marinho semi-transparente */
+    backdrop-filter: blur(12px); /* Efeito de vidro fosco/desfoque no fundo */
+    -webkit-backdrop-filter: blur(12px); /* Suporte para navegadores Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda branca bem fina e sutil */
     border-radius: 50px;
-    padding: 12px 40px;
-    width: 90%;
-    max-width: 1000px;
+    padding: 6px 24px; /* Reduzido para deixar o menu mais delicado */
+    width: max-content; /* O menu agora abraça o tamanho exato dos itens */
+    max-width: 90%;
     z-index: 1000;
-    box-shadow: 0 8px 24px rgba(1, 30, 56, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra mais difusa */
 }
-.menu-navegacao { display: flex; justify-content: space-between; align-items: center; }
-.logo { color: var(--off-white); font-weight: 500; font-size: 1.2rem; text-decoration: none; }
-.lista-menu { display: flex; list-style: none; gap: 32px; margin: 0; padding: 0; }
-.lista-menu a { color: var(--off-white); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
-.lista-menu a:hover { color: var(--salmao); /* #FFBC82[cite: 87] */ }
 
-/* 2. Banner Rotativo */
+.menu-navegacao { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 40px; /* Distância entre a logo e os links */
+}
+
+.logo { 
+    color: var(--off-white); 
+    font-weight: 500; 
+    font-size: 1.1rem; 
+    text-decoration: none; 
+}
+
+.lista-menu { 
+    display: flex; 
+    list-style: none; 
+    gap: 4px; /* Espaço reduzido entre os botões */
+    margin: 0; 
+    padding: 0; 
+}
+
+.lista-menu a { 
+    color: var(--off-white); 
+    text-decoration: none; 
+    font-size: 0.9rem; /* Letra mais elegante e menor */
+    font-weight: 400; 
+    padding: 8px 16px; /* Cria o formato de um botão invisível */
+    border-radius: 30px; /* Deixa o fundo do hover arredondado */
+    transition: all 0.3s ease; 
+}
+
+/* Efeito ao passar o mouse (Hover) com fundo preenchido */
+.lista-menu a:hover { 
+    background-color: rgba(255, 255, 255, 0.15); /* Fundo claro translúcido */
+    color: var(--salmao); 
+}
+
+/* 2. Banner Rotativo - Ajuste para ficar por trás do menu */
 .banner-rotativo {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 120px auto 40px auto; /* Espaço superior para o menu não sobrepor */
+    margin: 0 auto 40px auto; /* A margem superior '0' faz o banner subir e ficar embaixo do menu */
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0 0 12px 12px; /* Arredonda apenas a base do banner */
 }
+
 .slide { display: none; width: 100%; }
 .slide.ativa { display: block; }
 .slide img { width: 100%; height: auto; display: block; }
+
 .seta {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--azul-marinho); /*[cite: 87] */
-    color: var(--off-white); /*[cite: 87] */
+    background-color: rgba(1, 30, 56, 0.5); /* Setas semi-transparentes */
+    color: var(--off-white); 
     border: none;
     padding: 16px;
     cursor: pointer;
     border-radius: 50%;
-    opacity: 0.8;
     transition: 0.3s;
 }
-.seta:hover { background-color: var(--azul-royal); /* #264FEC[cite: 87] */ opacity: 1; }
+.seta:hover { background-color: var(--azul-royal); }
 .seta-esq { left: 16px; }
 .seta-dir { right: 16px; }
 
