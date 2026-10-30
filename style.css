@@ -62,21 +62,58 @@ body {
 .seta-esq { left: 16px; }
 .seta-dir { right: 16px; }
 
-/* 3. Bloco Diretoria */
+/* 3. Bloco Diretoria (Design Profissional) */
 .bloco-diretoria {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 60px; /* Mais respiro entre o texto e a foto */
     max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 5%; /* Margem simplificada[cite: 102] */
-    color: var(--azul-marinho); /*[cite: 87] */
+    margin: 80px auto;
+    padding: 0 5%;
 }
-.texto-lateral { flex: 1; }
-.texto-lateral h2 { font-size: 2rem; margin-bottom: 16px; }
-.foto-diretoria { flex: 1; }
-.foto-diretoria img { width: 100%; border-radius: 8px; }
 
+.card-texto-diretoria {
+    flex: 1;
+    background-color: #ffffff; /* Fundo branco para saltar aos olhos */
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 6px solid var(--azul-royal); /* Detalhe da marca */
+    box-shadow: 0 10px 30px rgba(1, 30, 56, 0.05); /* Sombra elegante */
+}
+
+.card-texto-diretoria h2 {
+    font-size: 2.2rem;
+    color: var(--azul-marinho);
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+/* O primeiro parágrafo um pouco maior e mais escuro */
+.texto-destaque {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--azul-marinho);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* O segundo parágrafo mais suave/clarinho */
+.texto-secundario {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(1, 30, 56, 0.7); /* Azul marinho com 70% de opacidade */
+    line-height: 1.6;
+}
+
+.foto-diretoria {
+    flex: 1;
+}
+
+.foto-diretoria img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(1, 30, 56, 0.1); /* Sombra na foto para dar volume */
+}
 /* Responsividade para celulares */
 @media (max-width: 768px) {
     .bloco-diretoria { flex-direction: column; text-align: center; }
