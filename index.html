@@ -1,41 +1,57 @@
-<!-- 1. Cabeçalho Flutuante -->
-<header class="header-flutuante">
-    <nav class="menu-navegacao">
-        <a href="#" class="logo">GB</a>
-        <ul class="lista-menu">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#iaf-treinamento">IAF Treinamento</a></li>
-            <li><a href="#feed">Feed de Notícias</a></li>
-            <li><a href="#unibe">Unibê</a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- 2. Banner Rotativo -->
-<section class="banner-rotativo" id="inicio">
-    <button class="seta seta-esq" onclick="mudarSlide(-1)">&#10094;</button>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento da Rede</title>
+    <!-- Conexão com o ficheiro de estilos (CSS) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     
-    <div class="slides-container">
-        <!-- Banner 1 -->
-        <a href="LINK_DESTINO_1" class="slide ativa">
-            <img src="URL_IMAGEM_BANNER_1" alt="Banner 1">
-        </a>
-        <!-- Banner 2 -->
-        <a href="LINK_DESTINO_2" class="slide">
-            <img src="URL_IMAGEM_BANNER_2" alt="Banner 2">
-        </a>
-    </div>
+    <!-- 1. Cabeçalho Flutuante -->
+    <header class="header-flutuante">
+        <nav class="menu-navegacao">
+            <a href="#" class="logo">GB</a>
+            <ul class="lista-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#iaf-treinamento">IAF Treinamento</a></li>
+                <li><a href="#feed">Feed de Notícias</a></li>
+                <li><a href="#unibe">Unibê</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <button class="seta seta-dir" onclick="mudarSlide(1)">&#10095;</button>
-</section>
+    <!-- 2. Banner Rotativo -->
+    <section class="banner-rotativo" id="inicio">
+        <button class="seta seta-esq" onclick="mudarSlide(-1)">&#10094;</button>
+        
+        <div class="slides-container">
+            <!-- Banner 1 -->
+            <a href="LINK_DESTINO_1" class="slide ativa">
+                <img src="URL_IMAGEM_BANNER_1" alt="Banner 1">
+            </a>
+            <!-- Banner 2 -->
+            <a href="LINK_DESTINO_2" class="slide">
+                <img src="URL_IMAGEM_BANNER_2" alt="Banner 2">
+            </a>
+        </div>
 
-<!-- 3. Bloco Diretoria -->
-<section class="bloco-diretoria">
-    <div class="texto-lateral">
-        <h2>Nossa Liderança</h2>
-        <p>Texto sobre a diretoria, focado na expansão da beleza e inovação.</p>
-    </div>
-    <div class="foto-diretoria">
-        <img src="URL_FOTO_DIRETORIA" alt="Foto da Diretoria">
-    </div>
-</section>
+        <button class="seta seta-dir" onclick="mudarSlide(1)">&#10095;</button>
+    </section>
+
+    <!-- 3. Bloco Diretoria -->
+    <section class="bloco-diretoria">
+        <div class="texto-lateral">
+            <h2>Nossa Liderança</h2>
+            <p>Texto sobre a diretoria, focado na expansão da beleza e inovação.</p>
+        </div>
+        <div class="foto-diretoria">
+            <img src="URL_FOTO_DIRETORIA" alt="Foto da Diretoria">
+        </div>
+    </section>
+
+    <!-- Conexão com o ficheiro de scripts (JavaScript) NO FINAL DA PÁGINA -->
+    <script src="app.js"></script>
+</body>
+</html>
