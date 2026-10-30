@@ -1,169 +1,41 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Hub da Liderança Multicanal</title>
- <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- 1. Cabeçalho Flutuante -->
+<header class="header-flutuante">
+    <nav class="menu-navegacao">
+        <a href="#" class="logo">GB</a>
+        <ul class="lista-menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#iaf-treinamento">IAF Treinamento</a></li>
+            <li><a href="#feed">Feed de Notícias</a></li>
+            <li><a href="#unibe">Unibê</a></li>
+        </ul>
+    </nav>
+</header>
 
+<!-- 2. Banner Rotativo -->
+<section class="banner-rotativo" id="inicio">
+    <button class="seta seta-esq" onclick="mudarSlide(-1)">&#10094;</button>
+    
+    <div class="slides-container">
+        <!-- Banner 1 -->
+        <a href="LINK_DESTINO_1" class="slide ativa">
+            <img src="URL_IMAGEM_BANNER_1" alt="Banner 1">
+        </a>
+        <!-- Banner 2 -->
+        <a href="LINK_DESTINO_2" class="slide">
+            <img src="URL_IMAGEM_BANNER_2" alt="Banner 2">
+        </a>
+    </div>
 
- <header class="topbar">
-   <div class="logo">Hub da <span>Liderança Multicanal</span></div>
-   <nav class="nav-links">
-     <button class="nav-btn active" onclick="openTab('tab-inicio', this)">
-       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-       Início
-     </button>
-     <button class="nav-btn" onclick="openTab('tab-feed', this)">
-       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
-       Feed de Notícias
-     </button>
-     <button class="nav-btn" onclick="openTab('tab-ferramentas', this)">
-       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-       Cx. de Ferramentas
-     </button>
-     <button class="nav-btn" onclick="openTab('tab-gb', this)">
-       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-       Por Dentro do GB
-     </button>
-   </nav>
- </header>
+    <button class="seta seta-dir" onclick="mudarSlide(1)">&#10095;</button>
+</section>
 
-
- <main class="container">
-  
-   <!-- ABA 1: PÁGINA INICIAL (DESIGN DE ELITE "UAU") -->
- <!-- ABA 1: PÁGINA INICIAL (VÍDEO DA DIRETORIA + CARDS + UNIBÊ) -->
-   <section id="tab-inicio" class="tab-content active">
-     <div class="home-premium-wrapper">
-      
-       <!-- Efeitos de Luz no Fundo -->
-       <div class="ambient-glow glow-1"></div>
-       <div class="ambient-glow glow-2"></div>
-
-
-       <!-- 1. BLOCO HERO DA DIRETORIA -->
-       <div class="home-hero-director stagger-1">
-         <h1 class="director-title">Conectando <span class="text-peach">excelência na operação.</span></h1>
-        
-         <div class="director-content">
-           <div class="director-text">
-             <p>Nossa <strong>plataforma unificada</strong> traz as informações essenciais, a cultura da equipe e os treinamentos diretamente para você. Desenvolva-se através dos <strong>nossos pilares estratégicos</strong>.</p>
-           </div>
-          
-           <div class="director-video-wrapper">
-             <video src="https://pub-10d51cdc4ccd4f6f89c767b7d8bea01e.r2.dev/feed/Conhec%CC%A7a%20a%20a%CC%81rea%20(2).mp4" controls preload="metadata"></video>
-           </div>
-         </div>
-       </div>
-
-
-       <!-- 2. TRIO DE CARDS EM CASCATA -->
-       <div class="home-cards-grand">
-        
-         <div class="premium-card stagger-2" onclick="navegarComMenu('tab-feed', 1)">
-           <div class="premium-icon-box">
-             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
-           </div>
-           <h3>Feed de Notícias</h3>
-           <p>Aqui você fica por dentro de tudo que acontece na Diretoria de Treinamento, além de eventos e Pílulas do Conhecimento.</p>
-           <span class="premium-link">Explorar o Feed &rarr;</span>
-         </div>
-
-
-         <div class="premium-card stagger-3" onclick="navegarComMenu('tab-ferramentas', 2)">
-           <div class="premium-icon-box">
-             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-           </div>
-           <h3>Caixa de Ferramentas</h3>
-           <p>Reunimos em um só lugar ferramentas muito importantes para o seu dia a dia, visando uma gestão estratégica das equipes.</p>
-           <span class="premium-link">Acessar Ferramentas &rarr;</span>
-         </div>
-
-
-         <div class="premium-card stagger-4" onclick="navegarComMenu('tab-gb', 3)">
-           <div class="premium-icon-box">
-             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-           </div>
-           <h3>Por Dentro da Diretoria</h3>
-           <p>Acompanhe treinamentos, eventos e informações importantes que a Diretoria de Treinamento tem para compartilhar.</p>
-           <span class="premium-link">Ver Conteúdos &rarr;</span>
-         </div>
-        
-       </div>
-
-
-       <!-- 3. BLOCO UNIBÊ MASTER (COM A IMAGEM 3D VAZANDO) -->
-       <div class="home-unibe-master stagger-5">
-         <div class="unibe-gradient-panel">
-           <p>Relembre constantemente sua rotina e <strong>acompanhe os treinamentos</strong> que darão continuidade constante à sua <strong>evolução profissional</strong>.</p>
-           <a href="#" target="_blank" class="premium-btn-cta">
-             Acessar Plataforma Unibê &rarr;
-           </a>
-         </div>
-         <img src="https://pub-10d51cdc4ccd4f6f89c767b7d8bea01e.r2.dev/feed/Prancheta%209%404x.png" alt="Especialista Flávia Alvarenga" class="unibe-3d-model">
-       </div>
-
-
-     </div>
-   </section>
-
-
-   <section id="tab-feed" class="tab-content">
-     <div class="main-layout">
-       <div class="feed-column">
-         <div id="feed-mount">
-           <div class="skeleton-loader">Carregando feed de notícias...</div>
-         </div>
-       </div>
-       <div class="sidebar-column">
-         <div class="section-title">Destaques Principais</div>
-         <div id="carousel-banner-mount">
-           <div class="skeleton-loader">Carregando destaques...</div>
-         </div>
-         <div class="section-title" style="margin-top: 20px;">Treinamentos em Andamento</div>
-         <div id="carousel-material-mount">
-           <div class="skeleton-loader">Carregando materiais...</div>
-         </div>
-       </div>
-     </div>
-   </section>
-
-
-   <section id="tab-ferramentas" class="tab-content">
-     <div id="mount-ferramentas">
-       <div class="skeleton-loader">Carregando ferramentas da rede...</div>
-     </div>
-   </section>
-
-
-   <section id="tab-gb" class="tab-content">
-     <div id="mount-gb">
-       <div class="skeleton-loader">Carregando catálogo e eventos...</div>
-     </div>
-   </section>
-
-
- </main>
-
-
- <div id="modal-image-viewer" class="modal-backdrop">
-   <div class="image-viewer-card">
-     <button class="image-viewer-close" onclick="fecharModalImagem()">&times;</button>
-     <div class="image-viewer-layout">
-       <div class="image-viewer-media" id="viewer-media-mount"></div>
-       <div class="image-viewer-sidebar">
-         <div class="viewer-header" id="viewer-header-mount"></div>
-         <div class="viewer-comments" id="viewer-comments-list"></div>
-         <div class="viewer-actions" id="viewer-actions-mount"></div>
-       </div>
-     </div>
-   </div>
- </div>
-
-
- <script type="module" src="app.js"></script>
-</body>
-</html>
+<!-- 3. Bloco Diretoria -->
+<section class="bloco-diretoria">
+    <div class="texto-lateral">
+        <h2>Nossa Liderança</h2>
+        <p>Texto sobre a diretoria, focado na expansão da beleza e inovação.</p>
+    </div>
+    <div class="foto-diretoria">
+        <img src="URL_FOTO_DIRETORIA" alt="Foto da Diretoria">
+    </div>
+</section>
