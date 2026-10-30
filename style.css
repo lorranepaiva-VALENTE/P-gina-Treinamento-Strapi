@@ -69,47 +69,21 @@ body {
     color: var(--salmao); 
 }
 
-/* 2. Banner Rotativo - Laterais Infinitas e Transição Suave */
+/* 2. Banner Rotativo - Altura Reduzida e Corte Seco */
 .banner-rotativo {
     position: relative;
-    width: 100%; /* Laterais infinitas preenchendo a tela toda */
-    max-width: 100%; 
-    height: 450px; /* Define uma altura menor e mais elegante */
-    margin: 0; /* Cola no topo da página, sob o menu */
-    overflow: hidden;
-}
-
-.slide { 
-    display: none; 
-    width: 100%; 
-    height: 100%; 
-}
-.slide.ativa { 
-    display: block; 
-}
-
-/* O object-fit garante que a imagem não achate, cortando as sobras como uma moldura */
-.slide img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    object-position: center; /* Mantém o foco no centro da imagem */
-    display: block; 
-}
-
-/* Efeito de degradê (sombreado) na base do banner para fundir com a página */
-.banner-rotativo::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: 120px; /* Altura do efeito de transição */
-    background: linear-gradient(to bottom, rgba(245, 241, 235, 0) 0%, var(--off-white) 100%);
-    pointer-events: none; /* Garante que o degradê não bloqueie os cliques */
+    max-width: 100%; 
+    height: 350px; /* Altura ainda menor, conforme solicitado */
+    margin: 0;
+    overflow: hidden;
+    /* Removido o pseudo-elemento ::after que criava o degradê/fumaça */
 }
 
-/* Ajuste das setas para as laterais do ecrã */
+.slide { display: none; width: 100%; height: 100%; }
+.slide.ativa { display: block; }
+.slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
 .seta {
     position: absolute;
     top: 50%;
@@ -117,72 +91,87 @@ body {
     background-color: rgba(1, 30, 56, 0.4); 
     color: var(--off-white); 
     border: none;
-    padding: 12px 18px;
+    padding: 10px 16px; /* Setas levemente menores para acompanhar o banner novo */
     cursor: pointer;
     border-radius: 50px;
     transition: all 0.3s ease;
     z-index: 10;
-    backdrop-filter: blur(4px); /* Efeito de vidro também nas setas */
+    backdrop-filter: blur(4px); 
 }
-
-.seta:hover { 
-    background-color: var(--azul-royal); 
-    padding: 12px 24px; /* Efeito do botão esticando levemente ao passar o mouse */
-}
+.seta:hover { background-color: var(--azul-royal); padding: 10px 20px; }
 .seta-esq { left: 30px; }
 .seta-dir { right: 30px; }
 
-/* 3. Bloco Diretoria (Design Profissional) */
+
+/* 3. Bloco Diretoria - Card Menor e Forma Atrás da Foto */
 .bloco-diretoria {
     display: flex;
     align-items: center;
-    gap: 60px; /* Mais respiro entre o texto e a foto */
-    max-width: 1200px;
+    justify-content: center; /* Centraliza todo o bloco na tela */
+    gap: 50px;
+    max-width: 1000px; /* Reduz a largura total da seção */
     margin: 80px auto;
     padding: 0 5%;
 }
 
 .card-texto-diretoria {
     flex: 1;
-    background-color: #ffffff; /* Fundo branco para saltar aos olhos */
-    padding: 40px;
+    background-color: #ffffff; 
+    padding: 30px; /* Reduz o espaço interno (padding) do card */
     border-radius: 12px;
-    border-left: 6px solid var(--azul-royal); /* Detalhe da marca */
-    box-shadow: 0 10px 30px rgba(1, 30, 56, 0.05); /* Sombra elegante */
+    border-left: 6px solid var(--azul-royal); 
+    box-shadow: 0 10px 30px rgba(1, 30, 56, 0.05); 
 }
 
 .card-texto-diretoria h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem; /* Título um pouco menor */
     color: var(--azul-marinho);
-    margin-bottom: 24px;
-    font-weight: 500;
-}
-
-/* O primeiro parágrafo um pouco maior e mais escuro */
-.texto-destaque {
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: var(--azul-marinho);
-    line-height: 1.6;
     margin-bottom: 20px;
+    font-weight: 500;
 }
 
-/* O segundo parágrafo mais suave/clarinho */
+.texto-destaque {
+    font-size: 1rem; /* Texto reduzido */
+    font-weight: 500;
+    color: var(--azul-marinho);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
 .texto-secundario {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Texto secundário reduzido */
     font-weight: 400;
-    color: rgba(1, 30, 56, 0.7); /* Azul marinho com 70% de opacidade */
-    line-height: 1.6;
+    color: rgba(1, 30, 56, 0.7); 
+    line-height: 1.5;
 }
 
+/* Container da foto com posição relativa para ancorar a forma de fundo */
 .foto-diretoria {
     flex: 1;
+    position: relative; /* Essencial para a forma laranja ficar atrás */
+    display: flex;
+    justify-content: center;
+}
+
+/* Criando a forma Laranja (Salmão) atrás do GIF */
+.foto-diretoria::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Desloca a forma para cima */
+    right: -20px; /* Desloca a forma para a direita */
+    width: 80%; /* Tamanho relativo à foto */
+    height: 80%;
+    background-color: var(--salmao); /* Cor do brandbook */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Cria uma forma orgânica/fluida */
+    z-index: -1; /* Garante que fique ATRÁS da imagem */
+    opacity: 0.8; /* Levemente transparente */
 }
 
 .foto-diretoria img {
     width: 100%;
+    max-width: 400px; /* Limita o tamanho máximo do GIF */
     border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(1, 30, 56, 0.1); /* Sombra na foto para dar volume */
+    box-shadow: 0 15px 40px rgba(1, 30, 56, 0.1); 
 }
 /* Responsividade para celulares */
 @media (max-width: 768px) {
