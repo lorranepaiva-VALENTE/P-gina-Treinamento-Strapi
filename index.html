@@ -43,63 +43,57 @@
         </div>
     </section>
 
-    <!-- 4. Modelos de Atendimento / Capacitações -->
+<!-- Bloco 03: Nossas Capacitações -->
     <section class="modelos-atendimento" id="capacitacoes">
         <div class="cabecalho-modelos">
-            <h2>Modelos de Atendimento</h2>
-            <p>Conheça as nossas frentes de capacitação e escolha a melhor para você</p>
+            <div class="tag-secao-escura">
+                <span class="ponto-salmao"></span>
+                <span>Conheça os públicos que desenvolvemos</span>
+            </div>
+            <h2>Nossas Capacitações</h2>
+            <p>Entenda o propósito de cada frente e o suporte oferecido para evoluir os diferentes perfis que movem a operação.</p>
         </div>
         
-        <div class="carrossel-cards-modelos">
-            <!-- Card 1 -->
-            <div class="card-modelo">
-                <img src="URL_IMAGEM_CARD_1" alt="Academy">
+        <div class="grid-cards-capacitacoes">
+            <!-- Card 1: Academy & Sucessores -->
+            <article class="card-modelo" onclick="abrirModalCapacitacao('academy')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') abrirModalCapacitacao('academy')">
+                <img src="URL_IMAGEM_CARD_ACADEMY" alt="Academy & Sucessores">
                 <div class="conteudo-card">
-                    <h3>Academy</h3>
-                    <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
-                    <a href="LINK_DESTINO_1" class="btn-acesso">Acesse aqui</a>
+                    <h3>Academy &amp; Sucessores</h3>
+                    <p>Formamos franqueados e sucessores para gerenciar o negócio com excelência, por meio de jornadas focadas em visão estratégica, alta performance, perenidade e nossa cultura.</p>
+                    <button type="button" class="btn-acesso">Veja mais detalhes →</button>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 2 -->
-            <div class="card-modelo">
-                <img src="URL_IMAGEM_CARD_2" alt="Liderança & Backoffice">
+            <!-- Card 2: Canal Loja -->
+            <article class="card-modelo" onclick="abrirModalCapacitacao('loja')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') abrirModalCapacitacao('loja')">
+                <img src="URL_IMAGEM_CARD_LOJA" alt="Canal Loja">
                 <div class="conteudo-card">
-                    <h3>Liderança & Backoffice</h3>
-                    <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
-                    <a href="LINK_DESTINO_2" class="btn-acesso">Acesse aqui</a>
+                    <h3>Canal Loja</h3>
+                    <p>Capacitação das equipes com foco em resultados e excelência operacional. Para aprofundamento nos modelos de atendimento Botileza (O Boticário) e Chega Junto (QDB). Confira abaixo!</p>
+                    <button type="button" class="btn-acesso">Veja mais detalhes →</button>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 3 -->
-            <div class="card-modelo">
-                <img src="URL_IMAGEM_CARD_3" alt="Chega Junto">
+            <!-- Card 3: Liderança & Backoffice -->
+            <article class="card-modelo" onclick="abrirModalCapacitacao('lideranca')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') abrirModalCapacitacao('lideranca')">
+                <img src="URL_IMAGEM_CARD_LIDERANCA" alt="Liderança & Backoffice">
                 <div class="conteudo-card">
-                    <h3>Chega Junto</h3>
-                    <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
-                    <a href="LINK_DESTINO_3" class="btn-acesso">Acesse aqui</a>
+                    <h3>Liderança &amp; Backoffice</h3>
+                    <p>Desenvolvimento baseado no futuro da rede: trilhas de gestão de pessoas, finanças e suporte contínuo para multiplicadoras.</p>
+                    <button type="button" class="btn-acesso">Veja mais detalhes →</button>
                 </div>
-            </div>
+            </article>
 
-            <!-- Card 4 -->
-            <div class="card-modelo">
-                <img src="URL_IMAGEM_CARD_4" alt="Botileza">
+            <!-- Card 4: Canal Venda Direta -->
+            <article class="card-modelo" onclick="abrirModalCapacitacao('vd')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') abrirModalCapacitacao('vd')">
+                <img src="URL_IMAGEM_CARD_VD" alt="Canal Venda Direta">
                 <div class="conteudo-card">
-                    <h3>Botileza</h3>
-                    <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
-                    <a href="LINK_DESTINO_4" class="btn-acesso">Acesse aqui</a>
+                    <h3>Canal Venda Direta</h3>
+                    <p>Impulsionamos equipes e lideranças. Foco na operação do Espaço do Revendedor com o modelo Maestria e trilhas de vendas exclusivas para as revendedoras.</p>
+                    <button type="button" class="btn-acesso">Veja mais detalhes →</button>
                 </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="card-modelo">
-                <img src="URL_IMAGEM_CARD_5" alt="Maestria">
-                <div class="conteudo-card">
-                    <h3>Maestria</h3>
-                    <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
-                    <a href="LINK_DESTINO_5" class="btn-acesso">Acesse aqui</a>
-                </div>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -371,6 +365,50 @@
         </div>
     </div>
 
+    <!-- Modal de Detalhes das Capacitações -->
+    <div class="modal-overlay" id="modalCapacitacao" aria-hidden="true" onclick="fecharModalCapacitacaoFora(event)">
+        <div class="modal-container modal-capacitacao-box" role="dialog" aria-labelledby="tituloModalCapacitacao">
+            <button type="button" class="btn-fechar-modal" onclick="fecharModalCapacitacao()" aria-label="Fechar janela">&times;</button>
+            
+            <div class="modal-cabecalho">
+                <div class="tag-modal">
+                    <span class="ponto-salmao"></span>
+                    <span>Frente de Capacitação</span>
+                </div>
+                <h3 id="tituloModalCapacitacao">Título da Frente</h3>
+            </div>
+
+            <div class="modal-corpo-capacitacao">
+                <div class="bloco-info-modal">
+                    <span class="label-info-modal">O QUE É</span>
+                    <p id="textoOQueE">Descrição sobre o que é esta frente de capacitação.</p>
+                </div>
+
+                <div class="bloco-info-modal">
+                    <span class="label-info-modal">COMO TE APOIA</span>
+                    <p id="textoComoApoia">Descrição sobre como esta frente apoia a operação.</p>
+                </div>
+            </div>
+
+            <div class="modal-rodape-capacitacao">
+                <a href="#" id="btnModalCap1" class="btn-modal-cap-primario" target="_blank" rel="noopener noreferrer">
+                    <span>Botão 1</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="#" id="btnModalCap2" class="btn-modal-cap-secundario" target="_blank" rel="noopener noreferrer">
+                    <span>Botão 2</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
     <!-- Conexão com o arquivo de scripts -->
     <script src="app.js"></script>
 </body>

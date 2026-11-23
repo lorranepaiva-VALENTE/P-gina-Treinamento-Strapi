@@ -198,78 +198,86 @@ body {
     box-shadow: 0 15px 40px rgba(1, 30, 56, 0.1);
 }
 
-/* 4. Modelos de Atendimento / Capacitações */
+/* 4. Bloco 03: Nossas Capacitações */
 .modelos-atendimento {
     background-color: var(--azul-marinho);
-    padding: 45px 5% 35px;
+    padding: 55px 5% 60px;
     color: var(--off-white);
 }
 
 .cabecalho-modelos {
-    max-width: 1250px;
-    margin: 0 auto 24px auto;
+    max-width: 1200px;
+    margin: 0 auto 32px auto;
     text-align: left;
 }
 
+.tag-secao-escura {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 188, 130, 0.12);
+    border: 1px solid rgba(255, 188, 130, 0.25);
+    padding: 5px 14px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+.tag-secao-escura span:last-child {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    color: var(--salmao);
+}
+
 .cabecalho-modelos h2 {
-    font-size: 1.5rem;
-    margin-bottom: 6px;
+    font-size: 1.65rem;
+    margin-bottom: 8px;
     font-weight: 500;
+    color: var(--off-white);
 }
 
 .cabecalho-modelos p {
-    font-size: 0.9rem;
-    opacity: 0.75;
+    font-size: 0.92rem;
+    color: rgba(245, 241, 235, 0.78);
+    max-width: 720px;
+    line-height: 1.5;
 }
 
-.carrossel-cards-modelos {
-    display: flex;
-    gap: 16px;
-    max-width: 1250px;
+/* Grade de 4 Cards Responsiva */
+.grid-cards-capacitacoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
     margin: 0 auto;
-    overflow-x: auto;
-    padding-bottom: 14px;
-    scroll-snap-type: x mandatory;
-}
-
-.carrossel-cards-modelos::-webkit-scrollbar {
-    height: 5px;
-}
-
-.carrossel-cards-modelos::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
-}
-
-.carrossel-cards-modelos::-webkit-scrollbar-thumb {
-    background-color: var(--salmao);
-    border-radius: 4px;
 }
 
 .card-modelo {
-    flex: 0 0 230px;
-    scroll-snap-align: start;
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card-modelo:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
 }
 
 .card-modelo img {
     width: 100%;
-    height: 120px;
+    height: 135px;
     object-fit: cover;
+    display: block;
 }
 
 .conteudo-card {
-    padding: 16px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -277,36 +285,135 @@ body {
 
 .conteudo-card h3 {
     color: var(--azul-marinho);
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 10px;
     line-height: 1.3;
 }
 
 .conteudo-card p {
-    color: rgba(1, 30, 56, 0.75);
-    font-size: 0.82rem;
-    line-height: 1.45;
-    margin-bottom: 16px;
+    color: rgba(1, 30, 56, 0.78);
+    font-size: 0.84rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
     flex: 1;
 }
 
 .btn-acesso {
-    display: block;
-    text-align: center;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--azul-royal);
     color: var(--off-white);
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 6px;
+    border: none;
+    font-family: inherit;
+    padding: 10px 14px;
+    border-radius: 8px;
     font-weight: 500;
     font-size: 0.85rem;
+    cursor: pointer;
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+.card-modelo:hover .btn-acesso,
 .btn-acesso:hover {
     background-color: var(--salmao);
     color: var(--azul-marinho);
+}
+
+/* Estilos do Modal de Detalhes das Capacitações */
+.modal-capacitacao-box {
+    max-width: 560px;
+}
+
+.modal-corpo-capacitacao {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.bloco-info-modal {
+    background-color: var(--off-white);
+    padding: 16px 18px;
+    border-radius: 10px;
+    border-left: 4px solid var(--azul-royal);
+}
+
+.label-info-modal {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--azul-royal);
+    margin-bottom: 6px;
+}
+
+.bloco-info-modal p {
+    font-size: 0.88rem;
+    color: var(--azul-marinho);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.modal-rodape-capacitacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btn-modal-cap-primario,
+.btn-modal-cap-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 500;
+    padding: 11px 14px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+.btn-modal-cap-primario {
+    background-color: var(--azul-royal);
+    color: var(--off-white);
+}
+
+.btn-modal-cap-primario:hover {
+    background-color: var(--salmao);
+    color: var(--azul-marinho);
+}
+
+.btn-modal-cap-secundario {
+    background-color: var(--azul-marinho);
+    color: var(--off-white);
+}
+
+.btn-modal-cap-secundario:hover {
+    background-color: var(--salmao);
+    color: var(--azul-marinho);
+}
+
+/* Ajustes Responsivos para os 4 Cards e o Modal */
+@media (max-width: 1024px) {
+    .grid-cards-capacitacoes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-cards-capacitacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-rodape-capacitacao {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* 5. Feed de Notícias */

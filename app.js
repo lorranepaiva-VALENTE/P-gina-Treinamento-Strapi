@@ -127,3 +127,89 @@ function enviarSugestao(evento) {
         fecharModalSugestao();
     }, 1800);
 }
+// =========================================================
+// 3. MODAL DE DETALHES - NOSSAS CAPACITAÇÕES
+// =========================================================
+
+const dadosCapacitacoes = {
+    academy: {
+        titulo: 'Academy & Sucessores',
+        oQueE: 'Programa de desenvolvimento contínuo para franqueados, operadores e sucessores homologados, com jornadas focadas em competências essenciais para perenidade do negócio.',
+        comoApoia: 'Garante que a alta liderança das franquias esteja preparada para gerenciar a complexidade das operações com visão estratégica, inovação e alinhamento à nossa cultura.',
+        btn1Texto: 'Acessar Plataforma Academy',
+        btn1Link: 'LINK_PLATAFORMA_ACADEMY',
+        btn2Texto: 'Acessar Trilha de Sucessores',
+        btn2Link: 'LINK_TRILHA_SUCESSORES'
+    },
+    loja: {
+        titulo: 'Canal Loja',
+        oQueE: 'Capacitação voltada para a equipe de loja, liderança e multiplicadoras, com foco em realizar vendas da melhor forma possível, sempre centradas no cliente.',
+        comoApoia: 'Aprofunda o conhecimento no Modelo de Atendimento O Boticário e Chega Junto (QDB), além do programa de fidelidade, garantindo resultados sustentáveis e de qualidade.',
+        btn1Texto: 'Acessar Botileza (O Boticário)',
+        btn1Link: 'LINK_BOTILEZA_BOTICARIO',
+        btn2Texto: 'Acessar Chega Junto (QDB)',
+        btn2Link: 'LINK_CHEGA_JUNTO_QDB'
+    },
+    lideranca: {
+        titulo: 'Liderança & Backoffice',
+        oQueE: 'Trilhas de desenvolvimento exclusivas para o time de liderança, backoffice das franquias e multiplicadoras, estruturadas nos pilares do futuro da rede.',
+        comoApoia: 'Prepara as equipes para atuarem com foco na excelência, fortalecendo fundamentos críticos como gestão de pessoas, gestão financeira e visão sistêmica da franquia.',
+        btn1Texto: 'Acessar Trilha Liderança',
+        btn1Link: 'LINK_TRILHA_LIDERANCA',
+        btn2Texto: 'Acessar Plataforma Backoffice',
+        btn2Link: 'LINK_PLATAFORMA_BACKOFFICE'
+    },
+    vd: {
+        titulo: 'Venda Direta',
+        oQueE: 'Frentes de capacitação direcionadas para a equipe, liderança e multiplicadoras de VD, além de conteúdos abertos diretamente para revendedores.',
+        comoApoia: 'Oferece o modelo de atendimento Maestria para gestão dos Espaços do Revendedor e garante acesso fácil e dinâmico aos conteúdos de vendas via YouTube.',
+        btn1Texto: 'Acessar Maestria (Espaço VD)',
+        btn1Link: 'LINK_MAESTRIA_ESPACO_VD',
+        btn2Texto: 'Acessar Canal do YouTube',
+        btn2Link: 'LINK_CANAL_YOUTUBE_VD'
+    }
+};
+
+function abrirModalCapacitacao(chave) {
+    const dados = dadosCapacitacoes[chave];
+    const modal = document.getElementById('modalCapacitacao');
+    if (!dados || !modal) return;
+
+    document.getElementById('tituloModalCapacitacao').innerText = dados.titulo;
+    document.getElementById('textoOQueE').innerText = dados.oQueE;
+    document.getElementById('textoComoApoia').innerText = dados.comoApoia;
+
+    const btn1 = document.getElementById('btnModalCap1');
+    const btn2 = document.getElementById('btnModalCap2');
+
+    btn1.querySelector('span').innerText = dados.btn1Texto;
+    btn1.href = dados.btn1Link;
+
+    btn2.querySelector('span').innerText = dados.btn2Texto;
+    btn2.href = dados.btn2Link;
+
+    modal.classList.add('ativo');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function fecharModalCapacitacao() {
+    const modal = document.getElementById('modalCapacitacao');
+    if (!modal) return;
+
+    modal.classList.remove('ativo');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+function fecharModalCapacitacaoFora(evento) {
+    if (evento.target.id === 'modalCapacitacao') {
+        fecharModalCapacitacao();
+    }
+}
+
+document.addEventListener('keydown', function (evento) {
+    if (evento.key === 'Escape') {
+        fecharModalCapacitacao();
+    }
+});
