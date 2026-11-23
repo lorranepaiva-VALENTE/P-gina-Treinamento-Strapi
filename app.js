@@ -207,6 +207,39 @@ function fecharModalCapacitacaoFora(evento) {
         fecharModalCapacitacao();
     }
 }
+// =========================================================
+// 4. FEEDBACK DO VÍDEO TUTORIAL - GESTÃO DE TREINAMENTOS
+// =========================================================
+
+function registrarFeedbackTutorial(foiUtil) {
+    const grupoBotoes = document.getElementById('botoesFeedbackTutorial');
+    const mensagemAgradecimento = document.getElementById('msgFeedbackTutorial');
+
+    if (grupoBotoes) {
+        grupoBotoes.style.display = 'none';
+    }
+
+    if (mensagemAgradecimento) {
+        mensagemAgradecimento.style.display = 'inline-flex';
+    }
+
+    const dadosFeedback = {
+        tutorial: 'Treinamentos Gerais',
+        util: foiUtil,
+        dataHora: new Date().toISOString()
+    };
+
+    console.log('Feedback do tutorial registrado:', dadosFeedback);
+
+    /*
+    Conexão futura com webhook (Power Automate / SharePoint / API interna):
+    fetch('https://sua-url-de-webhook-boticario.com/feedback-tutorial', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dadosFeedback)
+    });
+    */
+}
 
 document.addEventListener('keydown', function (evento) {
     if (evento.key === 'Escape') {
