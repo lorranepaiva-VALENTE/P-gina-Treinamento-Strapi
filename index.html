@@ -3,81 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinamento da Rede</title>
-    <!-- Conexão com o ficheiro de estilos (CSS) -->
+    <title>Treinamento da Rede | Grupo Boticário</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
     <!-- 1. Cabeçalho Flutuante -->
     <header class="header-flutuante">
         <nav class="menu-navegacao">
-            <a href="#" class="logo">Treinamento da rede</a>
+            <a href="#inicio" class="logo">Treinamento da rede</a>
             <ul class="lista-menu">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#iaf-treinamento">IAF Treinamento</a></li>
-                <li><a href="#feed">Feed de Notícias</a></li>
-                <li><a href="#unibe">Unibê</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#capacitacoes">Capacitações</a></li>
+                <li><a href="#indicador-iaf">Indicador IAF</a></li>
+                <li>
+                    <button type="button" class="btn-sugestao-menu" onclick="abrirModalSugestao()">Sugestão</button>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!-- 2. Banner Rotativo -->
-    <section class="banner-rotativo" id="inicio">
-        <button class="seta seta-esq" onclick="mudarSlide(-1)">&#10094;</button>
-        
-        <div class="slides-container">
-            <!-- Banner 1 (Ativo ao carregar) -->
-            <a href="https://unibe.grupoboticario.com.br/" class="slide ativa">
-                <img src="https://i.postimg.cc/LsHkRzJX/bann.png" alt="Banner 1 - Início">
-            </a>
-
-            <!-- Banner 2 -->
-            <a href="https://unibe.grupoboticario.com.br/" class="slide">
-                <img src="https://i.postimg.cc/3WMdtHsL/banner-iaf-2027-jpg.jpg" alt="Banner 2 - IAF">
-            </a>
-
-            <!-- Banner 3 -->
-            <a href="LINK_DESTINO_3" class="slide">
-                <img src="https://iili.io/nSYSHNa.md.png" alt="Banner 3 - Feed">
-            </a>
-
-            <!-- Banner 4 -->
-            <a href="LINK_DESTINO_4" class="slide">
-                <img src="URL_IMAGEM_BANNER_4" alt="Banner 4 - Unibê">
-            </a>
-
-            <!-- Banner 5 -->
-            <a href="LINK_DESTINO_5" class="slide">
-                <img src="URL_IMAGEM_BANNER_5" alt="Banner 5 - Novidades">
-            </a>
+    <!-- 2. Bloco 01 - Banner Institucional Fixo (Topo) -->
+    <section class="banner-estatico" id="inicio">
+        <div class="banner-conteudo">
+            <img src="URL_IMAGEM_BANNER_INSTITUCIONAL" alt="Banner Institucional - Treinamento Grupo Boticário">
         </div>
-
-        <button class="seta seta-dir" onclick="mudarSlide(1)">&#10095;</button>
     </section>
 
     <!-- 3. Bloco Diretoria -->
     <section class="bloco-diretoria">
         <div class="card-texto-diretoria">
             <h2>Como surgem os treinamentos?</h2>
-            <p class="texto-destaque">Por trás de cada conteúdo que você estuda e de cada nova habilidade que você desenvolve, existe um time apaixonado por varejo que trabalha nos bastidores para que você tenha a melhor capacitação para sua jornada.</p>
+            <p class="texto-destaque">Por trás de cada conteúdo que você estuda e de cada nova habilidade que você desenvolve, existe um time apaixonado por varejo que trabalha nos bastidores todos os dias para que você tenha a melhor capacitação na palma da sua mão.</p>
             <p class="texto-secundario"><strong>Nós somos a Diretoria de Treinamento do Grupo Boticário!</strong> Preparamos este espaço para você estar por dentro de tudo o que acontece em treinamento!</p>
         </div>
         <div class="foto-diretoria">
             <img src="https://iili.io/nSYM6uI.gif" alt="Diretoria de Treinamento do Grupo Boticário">
         </div>
     </section>
-<!-- 4. Modelos de Atendimento (Carrossel Horizontal) -->
-    <section class="modelos-atendimento" id="iaf-treinamento">
+
+    <!-- 4. Modelos de Atendimento / Capacitações -->
+    <section class="modelos-atendimento" id="capacitacoes">
         <div class="cabecalho-modelos">
             <h2>Modelos de Atendimento</h2>
-            <p>Conheça as nossas frentes de capacitação e escolha a melhor para si</p>
+            <p>Conheça as nossas frentes de capacitação e escolha a melhor para você</p>
         </div>
         
         <div class="carrossel-cards-modelos">
             <!-- Card 1 -->
             <div class="card-modelo">
-                <img src="https://iili.io/nSYM6uI.gif" alt="Academy">
+                <img src="URL_IMAGEM_CARD_1" alt="Academy">
                 <div class="conteudo-card">
                     <h3>Academy</h3>
                     <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
@@ -87,7 +63,7 @@
 
             <!-- Card 2 -->
             <div class="card-modelo">
-                <img src="https://iili.io/nSYM6uI.gif" alt="Liderança & Backoffice">
+                <img src="URL_IMAGEM_CARD_2" alt="Liderança & Backoffice">
                 <div class="conteudo-card">
                     <h3>Liderança & Backoffice</h3>
                     <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
@@ -97,7 +73,7 @@
 
             <!-- Card 3 -->
             <div class="card-modelo">
-                <img src="https://iili.io/nSYM6uI.gif" alt="Chega Junto">
+                <img src="URL_IMAGEM_CARD_3" alt="Chega Junto">
                 <div class="conteudo-card">
                     <h3>Chega Junto</h3>
                     <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
@@ -107,7 +83,7 @@
 
             <!-- Card 4 -->
             <div class="card-modelo">
-                <img src="https://iili.io/nSYM6uI.gif" alt="Botileza">
+                <img src="URL_IMAGEM_CARD_4" alt="Botileza">
                 <div class="conteudo-card">
                     <h3>Botileza</h3>
                     <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
@@ -117,7 +93,7 @@
 
             <!-- Card 5 -->
             <div class="card-modelo">
-                <img src="https://iili.io/nSYM6uI.gif" alt="Maestria">
+                <img src="URL_IMAGEM_CARD_5" alt="Maestria">
                 <div class="conteudo-card">
                     <h3>Maestria</h3>
                     <p>Descrição breve sobre este formato de treinamento e como ele pode ajudar no seu desenvolvimento.</p>
@@ -126,29 +102,28 @@
             </div>
         </div>
     </section>
-   <!-- 5. Feed de Notícias -->
-    <section class="feed-noticias" id="feed-noticias">
+
+    <!-- 5. Bloco de Notícias (Feed Carrossel com Curtida e Saiba Mais) -->
+    <section class="feed-noticias" id="noticias">
         <div class="cabecalho-feed">
-            <!-- Pílula estilizada com indicador em Salmão -->
             <div class="tag-secao-feed">
                 <span class="ponto-salmao"></span>
                 <span>Atualizações Rápidas</span>
             </div>
-            <h2>Feed de Notícias do Treinamento</h2>
+            <h2>Últimas novidades em treinamento</h2>
             <p>Novidades, lançamentos de campanhas e comunicados diretos para a rotina de loja.</p>
         </div>
 
-        <!-- Container relativo que ancora as setas nas laterais -->
         <div class="feed-carrossel-wrapper">
             <!-- Seta Lateral Esquerda -->
-            <button class="seta-feed-lateral seta-esq" onclick="rolarFeed(-1)" aria-label="Voltar notícia">‹</button>
+            <button type="button" class="seta-feed-lateral seta-esq" onclick="rolarFeed(-1)" aria-label="Voltar notícia">‹</button>
 
             <div class="carrossel-noticias" id="carrosselNoticias">
                 <!-- Card 1 -->
-                <article class="card-post" data-id="comunicado-iaf-2026">
+                <article class="card-post" data-id="comunicado-iaf-2027">
                     <div class="imagem-post">
                         <span class="badge-post novidade">Novidade</span>
-                        <img src="https://iili.io/nSYM6uI.gif" alt="IAF">
+                        <img src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=500&q=80" alt="IAF">
                     </div>
                     <div class="conteudo-post">
                         <div class="meta-post">1 min • Hoje</div>
@@ -156,25 +131,20 @@
                         <p>Revisão dos critérios práticos para as operações de loja neste ciclo.</p>
                         
                         <div class="barra-interacoes">
-                            <button class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'comunicado-iaf-2026')">
+                            <button type="button" class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'comunicado-iaf-2027')">
                                 <svg class="icone-coracao" viewBox="0 0 24 24" width="16" height="16">
                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                 </svg>
                                 <span class="contagem-curtidas">24</span>
                             </button>
-                            <button class="btn-interacao btn-comentar" onclick="alternarCaixaComentario(this)">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                                </svg>
-                                <span>Comentar</span>
-                            </button>
-                        </div>
 
-                        <div class="area-comentarios" style="display: none;">
-                            <div class="lista-comentarios"></div>
-                            <div class="input-comentario-wrapper">
-                                <input type="text" placeholder="Deixe um comentário..." onkeypress="enviarComentario(event, this, 'comunicado-iaf-2026')">
-                            </div>
+                            <a href="LINK_SAIBA_MAIS_1" class="btn-interacao btn-saiba-mais">
+                                <span>Saiba mais</span>
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -183,7 +153,7 @@
                 <article class="card-post" data-id="trilha-maestria">
                     <div class="imagem-post">
                         <span class="badge-post campanha">Campanha</span>
-                        <img src="https://iili.io/nSYM6uI.gif" alt="Unibê">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80" alt="Unibê">
                     </div>
                     <div class="conteudo-post">
                         <div class="meta-post">2 min • Ontem</div>
@@ -191,25 +161,20 @@
                         <p>Módulos objetivos focados em técnicas de consultoria e perfumaria.</p>
                         
                         <div class="barra-interacoes">
-                            <button class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'trilha-maestria')">
+                            <button type="button" class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'trilha-maestria')">
                                 <svg class="icone-coracao" viewBox="0 0 24 24" width="16" height="16">
                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                 </svg>
                                 <span class="contagem-curtidas">42</span>
                             </button>
-                            <button class="btn-interacao btn-comentar" onclick="alternarCaixaComentario(this)">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                                </svg>
-                                <span>Comentar</span>
-                            </button>
-                        </div>
 
-                        <div class="area-comentarios" style="display: none;">
-                            <div class="lista-comentarios"></div>
-                            <div class="input-comentario-wrapper">
-                                <input type="text" placeholder="Deixe um comentário..." onkeypress="enviarComentario(event, this, 'trilha-maestria')">
-                            </div>
+                            <a href="LINK_SAIBA_MAIS_2" class="btn-interacao btn-saiba-mais">
+                                <span>Saiba mais</span>
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -218,7 +183,7 @@
                 <article class="card-post" data-id="dica-balcao-objecoes">
                     <div class="imagem-post">
                         <span class="badge-post destaque">Dica de Bolso</span>
-                        <img src="https://iili.io/nSYM6uI.gif" alt="Vendas">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=80" alt="Vendas">
                     </div>
                     <div class="conteudo-post">
                         <div class="meta-post">30 seg • 2 dias atrás</div>
@@ -226,25 +191,20 @@
                         <p>Guia relâmpago de escuta ativa para contornar dúvidas na hora do fechamento.</p>
                         
                         <div class="barra-interacoes">
-                            <button class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'dica-balcao-objecoes')">
+                            <button type="button" class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'dica-balcao-objecoes')">
                                 <svg class="icone-coracao" viewBox="0 0 24 24" width="16" height="16">
                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                 </svg>
                                 <span class="contagem-curtidas">67</span>
                             </button>
-                            <button class="btn-interacao btn-comentar" onclick="alternarCaixaComentario(this)">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                                </svg>
-                                <span>Comentar</span>
-                            </button>
-                        </div>
 
-                        <div class="area-comentarios" style="display: none;">
-                            <div class="lista-comentarios"></div>
-                            <div class="input-comentario-wrapper">
-                                <input type="text" placeholder="Deixe um comentário..." onkeypress="enviarComentario(event, this, 'dica-balcao-objecoes')">
-                            </div>
+                            <a href="LINK_SAIBA_MAIS_3" class="btn-interacao btn-saiba-mais">
+                                <span>Saiba mais</span>
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -253,7 +213,7 @@
                 <article class="card-post" data-id="lancamento-perfumaria">
                     <div class="imagem-post">
                         <span class="badge-post novidade">Lançamento</span>
-                        <img src="https://iili.io/nSYM6uI.gif" alt="Produto">
+                        <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=500&q=80" alt="Produto">
                     </div>
                     <div class="conteudo-post">
                         <div class="meta-post">1 min • 3 dias atrás</div>
@@ -261,25 +221,20 @@
                         <p>Argumentos olfativos essenciais e combinações de cross-selling de presentes.</p>
                         
                         <div class="barra-interacoes">
-                            <button class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'lancamento-perfumaria')">
+                            <button type="button" class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'lancamento-perfumaria')">
                                 <svg class="icone-coracao" viewBox="0 0 24 24" width="16" height="16">
                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                 </svg>
                                 <span class="contagem-curtidas">35</span>
                             </button>
-                            <button class="btn-interacao btn-comentar" onclick="alternarCaixaComentario(this)">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                                </svg>
-                                <span>Comentar</span>
-                            </button>
-                        </div>
 
-                        <div class="area-comentarios" style="display: none;">
-                            <div class="lista-comentarios"></div>
-                            <div class="input-comentario-wrapper">
-                                <input type="text" placeholder="Deixe um comentário..." onkeypress="enviarComentario(event, this, 'lancamento-perfumaria')">
-                            </div>
+                            <a href="LINK_SAIBA_MAIS_4" class="btn-interacao btn-saiba-mais">
+                                <span>Saiba mais</span>
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -288,7 +243,7 @@
                 <article class="card-post" data-id="boas-praticas-estoque">
                     <div class="imagem-post">
                         <span class="badge-post campanha">Operação</span>
-                        <img src="https://iili.io/nSYM6uI.gif" alt="Logística">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&q=80" alt="Logística">
                     </div>
                     <div class="conteudo-post">
                         <div class="meta-post">2 min • 4 dias atrás</div>
@@ -296,36 +251,32 @@
                         <p>Como estruturar o estoque para acelerar a reposição de área de venda nos picos.</p>
                         
                         <div class="barra-interacoes">
-                            <button class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'boas-praticas-estoque')">
+                            <button type="button" class="btn-interacao btn-curtir" onclick="alternarCurtida(this, 'boas-praticas-estoque')">
                                 <svg class="icone-coracao" viewBox="0 0 24 24" width="16" height="16">
                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                 </svg>
                                 <span class="contagem-curtidas">19</span>
                             </button>
-                            <button class="btn-interacao btn-comentar" onclick="alternarCaixaComentario(this)">
-                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                                </svg>
-                                <span>Comentar</span>
-                            </button>
-                        </div>
 
-                        <div class="area-comentarios" style="display: none;">
-                            <div class="lista-comentarios"></div>
-                            <div class="input-comentario-wrapper">
-                                <input type="text" placeholder="Deixe um comentário..." onkeypress="enviarComentario(event, this, 'boas-praticas-estoque')">
-                            </div>
+                            <a href="LINK_SAIBA_MAIS_5" class="btn-interacao btn-saiba-mais">
+                                <span>Saiba mais</span>
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </article>
             </div>
 
             <!-- Seta Lateral Direita -->
-            <button class="seta-feed-lateral seta-dir" onclick="rolarFeed(1)" aria-label="Avançar notícia">›</button>
+            <button type="button" class="seta-feed-lateral seta-dir" onclick="rolarFeed(1)" aria-label="Avançar notícia">›</button>
         </div>
     </section>
+
     <!-- 6. Bloco Destaque - Indicador IAF 2027 -->
-    <section class="bloco-iaf" id="iaf-indicador">
+    <section class="bloco-iaf" id="indicador-iaf">
         <div class="card-iaf-destaque">
             <div class="conteudo-iaf">
                 <div class="tag-iaf">
@@ -350,7 +301,6 @@
                 </a>
             </div>
 
-            <!-- Card decorativo de prévia -->
             <div class="visual-iaf">
                 <div class="card-previa-metas">
                     <div class="topo-previa">
@@ -369,7 +319,59 @@
             </div>
         </div>
     </section>
-    <!-- Conexão com o ficheiro de scripts (JavaScript) NO FINAL DA PÁGINA -->
+
+    <!-- 7. Modal de Sugestões -->
+    <div class="modal-overlay" id="modalSugestao" aria-hidden="true" onclick="fecharModalFora(event)">
+        <div class="modal-container" role="dialog" aria-labelledby="tituloModalSugestao">
+            <button type="button" class="btn-fechar-modal" onclick="fecharModalSugestao()" aria-label="Fechar janela">&times;</button>
+            
+            <div class="modal-cabecalho">
+                <div class="tag-modal">
+                    <span class="ponto-salmao"></span>
+                    <span>Canal de Escuta</span>
+                </div>
+                <h3 id="tituloModalSugestao">Envie sua Sugestão</h3>
+                <p>Sua contribuição ajuda a evoluir continuamente a experiência de treinamento na rede.</p>
+            </div>
+
+            <form id="formSugestao" class="form-sugestao" onsubmit="enviarSugestao(event)">
+                <div class="campo-grupo">
+                    <label for="campoCargo">Cargo</label>
+                    <input type="text" id="campoCargo" name="cargo" placeholder="Ex: Consultor(a) de Beleza, Gerente, Supervisor(a)..." required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="campoCp">CP - Código Pai</label>
+                    <input type="text" id="campoCp" name="cp" placeholder="Informe o Código Pai da sua operação" required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="campoAssunto">Assunto</label>
+                    <select id="campoAssunto" name="assunto" required>
+                        <option value="" disabled selected>Selecione o tema...</option>
+                        <option value="Plataforma">Plataforma</option>
+                        <option value="Conteúdo">Conteúdo</option>
+                    </select>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="campoComentario">Comentário / Sugestão</label>
+                    <textarea id="campoComentario" name="comentario" rows="4" placeholder="Descreva sua sugestão ou melhoria com detalhes..." required></textarea>
+                </div>
+
+                <div id="feedbackSugestao" class="feedback-sugestao" style="display: none;">
+                    Sugestão enviada com sucesso! Obrigado pela sua colaboração.
+                </div>
+
+                <div class="modal-acoes">
+                    <button type="button" class="btn-cancelar-modal" onclick="fecharModalSugestao()">Cancelar</button>
+                    <button type="submit" class="btn-enviar-modal">Enviar Sugestão</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Conexão com o arquivo de scripts -->
     <script src="app.js"></script>
-    </body>
+</body>
 </html>

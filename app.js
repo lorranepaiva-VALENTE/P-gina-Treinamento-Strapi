@@ -1,47 +1,21 @@
-let indiceSlide = 0;
-const slides = document.querySelectorAll('.slide');
-let intervaloBanner;
+// =========================================================
+// 1. FEED DE NOTÍCIAS (CARROSSEL E CURTIDAS)
+// =========================================================
 
-function mudarSlide(direcao) {
-    slides[indiceSlide].classList.remove('ativa');
-    indiceSlide += direcao;
-    
-    if (indiceSlide >= slides.length) {
-        indiceSlide = 0;
-    } else if (indiceSlide < 0) {
-        indiceSlide = slides.length - 1;
-    }
-    
-    slides[indiceSlide].classList.add('ativa');
-    resetarIntervalo(); // Zera o contador se o usuário clicar
-}
-
-// Troca o banner automaticamente a cada 5 segundos (5000 ms)
-function autoPlay() {
-    intervaloBanner = setInterval(() => {
-        mudarSlide(1);
-    }, 5000);
-}
-
-function resetarIntervalo() {
-    clearInterval(intervaloBanner);
-    autoPlay();
-}
-
-// Rolagem pelas setas do feed
 function rolarFeed(direcao) {
     const carrossel = document.getElementById('carrosselNoticias');
-    const larguraCard = 266; // 250px largura + 16px de espaçamento
+    if (!carrossel) return;
+
+    const larguraCard = 266; // 250px largura do card + 16px de gap
     carrossel.scrollBy({
         left: direcao * larguraCard,
         behavior: 'smooth'
     });
 }
 
-// Alternar Curtida com ponto de rastreamento
 function alternarCurtida(botao, idPost) {
     const contador = botao.querySelector('.contagem-curtidas');
-    let numero = parseInt(contador.innerText);
+    let numero = parseInt(contador.innerText, 10);
     const estaCurtido = botao.classList.contains('curtido');
 
     if (estaCurtido) {
@@ -55,54 +29,101 @@ function alternarCurtida(botao, idPost) {
     }
 }
 
-// Alternar caixa de comentários
-function alternarCaixaComentario(botao) {
-    const card = botao.closest('.conteudo-post');
-    const area = card.querySelector('.area-comentarios');
-    
-    if (area.style.display === 'none' || area.style.display === '') {
-        area.style.display = 'block';
-        area.querySelector('input').focus();
-    } else {
-        area.style.display = 'none';
-    }
-}
-
-// Inserir comentário com ponto de coleta
-function enviarComentario(evento, input, idPost) {
-    if (evento.key === 'Enter' && input.value.trim() !== '') {
-        const texto = input.value.trim();
-        const area = input.closest('.area-comentarios');
-        const lista = area.querySelector('.lista-comentarios');
-        
-        const novoComentario = document.createElement('div');
-        novoComentario.className = 'item-comentario';
-        novoComentario.innerText = texto;
-        
-        lista.appendChild(novoComentario);
-        input.value = '';
-
-        registrarEngajamento(idPost, 'comentario', texto);
-    }
-}
-
-// Função de telemetria / rastreamento para conectar à API corporativa
-function registrarEngajamento(idPost, tipoAcao, conteudo = '') {
+function registrarEngajamento(idPost, tipoAcao) {
     const dadosRastreamento = {
         postId: idPost,
         acao: tipoAcao,
-        comentario: conteudo,
         dataHora: new Date().toISOString()
     };
 
-    console.log("Rastreamento coletado:", dadosRastreamento);
+    console.log('Rastreamento de curtida coletado:', dadosRastreamento);
 
-    /* 
-    Exemplo de conexão futura com Power Automate ou endpoint interno:
-    fetch('https://sua-url-de-webhook-boticario.com', {
+    /*
+    Conexão futura com webhook (Power Automate / SharePoint / API interna):
+    fetch('https://sua-url-de-webhook-boticario.com/curtidas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dadosRastreamento)
     });
     */
+}
+
+// =========================================================
+// 2. MODAL DE SUGESTÕES
+// =========================================================
+
+function abrirModalSugestao() {
+    const modal = document.getElementById('modalSugestao');
+    const feedback = document.getElementById('feedbackSugestao');
+    if (!modal) return;
+
+    if (feedback) {
+        feedback.style.display = 'none';
+    }
+
+    modal.classList.add('ativo');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    const primeiroCampo = document.getElementById('campoCargo');
+    if (primeiroCampo) {
+        primeiroCampo.focus();
+    }
+}
+
+function fecharModalSugestao() {
+    const modal = document.getElementById('modalSugestao');
+    if (!modal) return;
+
+    modal.classList.remove('ativo');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+function fecharModalFora(evento) {
+    if (evento.target.id === 'modalSugestao') {
+        fecharModalSugestao();
+    }
+}
+
+document.addEventListener('keydown', function (evento) {
+    if (evento.key === 'Escape') {
+        fecharModalSugestao();
+    }
+});
+
+function enviarSugestao(evento) {
+    evento.preventDefault();
+
+    const form = document.getElementById('formSugestao');
+    const feedback = document.getElementById('feedbackSugestao');
+
+    const payloadSugestao = {
+        cargo: document.getElementById('campoCargo').value.trim(),
+        codigoPai: document.getElementById('campoCp').value.trim(),
+        assunto: document.getElementById('campoAssunto').value,
+        comentario: document.getElementById('campoComentario').value.trim(),
+        dataHora: new Date().toISOString()
+    };
+
+    console.log('Sugestão registrada:', payloadSugestao);
+
+    /*
+    Conexão futura com webhook (Power Automate / SharePoint / API interna):
+    fetch('https://sua-url-de-webhook-boticario.com/sugestoes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payloadSugestao)
+    });
+    */
+
+    if (feedback) {
+        feedback.style.display = 'block';
+    }
+
+    form.reset();
+
+    setTimeout(() => {
+        fecharModalSugestao();
+    }, 1800);
 }
