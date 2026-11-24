@@ -344,3 +344,48 @@ function selecionarVideoAcademy(chave, botaoClicado) {
         if (overlay) overlay.classList.remove('oculto');
     }
 }
+// =========================================================
+// 7. SELETOR DE VÍDEO - SUBPÁGINA IAF LAB LIDERANÇA & BACKOFFICE
+// =========================================================
+
+const videosDashboardLideranca = {
+    'treinamentos-gerais': {
+        nome: 'Treinamentos gerais',
+        tituloOverlay: 'Dashboard Treinamentos Gerais',
+        descricaoOverlay: 'O vídeo explicativo passo a passo estará disponível em breve.',
+        videoUrl: '' // Quando publicar no Strapi, coloque aqui a URL .mp4
+    }
+};
+
+function selecionarVideoLideranca(chave, botaoClicado) {
+    const config = videosDashboardLideranca[chave];
+    if (!config) return;
+
+    if (botaoClicado) {
+        botaoClicado.classList.add('ativo');
+    }
+
+    const legenda = document.getElementById('legendaVideoLideranca');
+    if (legenda) {
+        legenda.innerHTML = `Tutorial selecionado: <strong>${config.nome}</strong> • <span class="destaque-breve-topo">Em breve</span>`;
+    }
+
+    const overlay = document.getElementById('overlayEmBreveLideranca');
+    const tituloOverlay = document.getElementById('tituloOverlayVideoLideranca');
+    const descOverlay = document.getElementById('descricaoOverlayVideoLideranca');
+    const player = document.getElementById('playerVideoLideranca');
+    const source = document.getElementById('sourceVideoLideranca');
+
+    if (tituloOverlay) tituloOverlay.innerText = config.tituloOverlay;
+    if (descOverlay) descOverlay.innerText = config.descricaoOverlay;
+
+    if (config.videoUrl && config.videoUrl.trim() !== '') {
+        if (overlay) overlay.classList.add('oculto');
+        if (source && player) {
+            source.src = config.videoUrl;
+            player.load();
+        }
+    } else {
+        if (overlay) overlay.classList.remove('oculto');
+    }
+}
