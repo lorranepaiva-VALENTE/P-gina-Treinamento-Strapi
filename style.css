@@ -1830,6 +1830,37 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     color: var(--azul-marinho);
     transform: translateY(-1px);
 }
+
+.btn-gb-resolve {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--azul-royal);
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 13px 24px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(38, 79, 236, 0.3);
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.btn-gb-resolve .seta-externa {
+    transition: transform 0.25s ease;
+}
+
+.btn-gb-resolve:hover {
+    background-color: var(--salmao);
+    color: var(--azul-marinho);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 188, 130, 0.35);
+}
+
+.btn-gb-resolve:hover .seta-externa {
+    transform: translateX(4px);
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {
