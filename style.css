@@ -1808,6 +1808,28 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     margin-top: 14px;
     margin-bottom: 0;
 }
+.btn-voltar-rodape {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: var(--off-white);
+    border: 1px solid rgba(245, 241, 235, 0.28);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.btn-voltar-rodape:hover {
+    background-color: var(--salmao);
+    border-color: var(--salmao);
+    color: var(--azul-marinho);
+    transform: translateY(-2px);
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {
