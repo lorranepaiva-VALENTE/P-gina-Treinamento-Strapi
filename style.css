@@ -1651,6 +1651,106 @@ body {
     line-height: 1.45;
     margin: 0;
 }
+/* Fundo texturizado e iluminado para a Subpágina IAF */
+body.pagina-sub-iaf {
+    background-color: var(--off-white);
+    background-image:
+        radial-gradient(circle at 8% 12%, rgba(38, 79, 236, 0.09) 0%, transparent 42%),
+        radial-gradient(circle at 92% 28%, rgba(255, 188, 130, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 15% 78%, rgba(1, 30, 56, 0.06) 0%, transparent 48%),
+        radial-gradient(rgba(1, 30, 56, 0.07) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+}
+
+/* Cabeçalho fixo apenas no topo da subpágina (não acompanha a rolagem) */
+.header-topo-subpagina {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, var(--azul-marinho) 0%, #052c52 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 18px 5%;
+}
+
+.container-topo-sub {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.logo-subpagina {
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 1.08rem;
+    font-weight: 500;
+}
+
+.btn-voltar-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--off-white);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+}
+
+.btn-voltar-sub:hover {
+    background-color: var(--salmao);
+    border-color: var(--salmao);
+    color: var(--azul-marinho);
+}
+
+/* Ajuste do main já que o menu não é mais fixed sobre o conteúdo */
+body.pagina-sub-iaf .subpagina-iaf {
+    background-color: transparent;
+    padding-top: 24px;
+}
+
+body.pagina-sub-iaf .secao-tutorial-faq-iaf {
+    background-color: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* Rodapé da Subpágina */
+.rodape-subpagina {
+    background-color: var(--azul-marinho);
+    border-top: 3px solid var(--salmao);
+    padding: 44px 5%;
+    color: var(--off-white);
+}
+
+.container-rodape-sub {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.titulo-rodape-sub {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--salmao);
+    margin-bottom: 6px;
+}
+
+.subtitulo-rodape-sub {
+    font-size: 0.9rem;
+    color: rgba(245, 241, 235, 0.85);
+    line-height: 1.5;
+    max-width: 680px;
+    margin: 0;
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {
@@ -1728,5 +1828,15 @@ body {
     .grid-tutorial-faq,
     .seletores-video-iaf {
         grid-template-columns: 1fr;
+    }
+    .container-rodape-sub {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .container-rodape-sub .btn-gb-resolve {
+        width: 100%;
+        justify-content: center;
     }
 }

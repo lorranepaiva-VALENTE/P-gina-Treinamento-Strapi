@@ -6,24 +6,20 @@
     <title>IAF Força de Vendas | Treinamento da Rede - Grupo Boticário</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="pagina-sub-iaf">
 
-    <!-- 1. Cabeçalho Flutuante Adaptado -->
-    <header class="header-flutuante">
-        <nav class="menu-navegacao">
-            <a href="index.html" class="logo">Treinamento da rede</a>
-            <ul class="lista-menu">
-                <li>
-                    <a href="index.html" class="btn-voltar-inicio">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                        <span>Voltar para o início</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <!-- 1. Cabeçalho no Topo (Fixo no fluxo da subpágina, não acompanha a rolagem) -->
+    <header class="header-topo-subpagina">
+        <div class="container-topo-sub">
+            <a href="index.html" class="logo-subpagina">Treinamento da rede</a>
+            <a href="index.html" class="btn-voltar-sub">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Voltar para o início</span>
+            </a>
+        </div>
     </header>
 
     <!-- 2. Área Principal da Subpágina -->
@@ -32,18 +28,9 @@
         <!-- Cabeçalho da Seção -->
         <section class="cabecalho-subpagina-iaf">
             <div class="container-subpagina">
-                <div class="topo-navegacao-subpagina">
-                    <div class="tag-secao-feed">
-                        <span class="ponto-salmao"></span>
-                        <span>Indicador IAF • Força de Vendas</span>
-                    </div>
-                    <a href="index.html" class="link-voltar-topo">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                        <span>Voltar para a página inicial</span>
-                    </a>
+                <div class="tag-secao-feed">
+                    <span class="ponto-salmao"></span>
+                    <span>Indicador IAF • Força de Vendas</span>
                 </div>
                 <h1>Central do Indicador de Treinamento IAF</h1>
             </div>
@@ -160,7 +147,6 @@
 
                     <!-- Coluna Direita: Seletores de Vídeo + Player -->
                     <div class="coluna-player-seletor">
-                        <!-- Seletores para alternar entre os dois vídeos -->
                         <div class="seletores-video-iaf" role="tablist" aria-label="Vídeos explicativos do Dashboard">
                             <button type="button" class="btn-seletor-video ativo" id="btnVideoFV" onclick="selecionarVideoFV('fv', this)">
                                 <span class="titulo-seletor-video">Força de Vendas</span>
@@ -173,7 +159,6 @@
                             </button>
                         </div>
 
-                        <!-- Container do Player -->
                         <div class="player-tutorial-card">
                             <div class="player-tutorial-topo">
                                 <span class="indicador-reproducao"></span>
@@ -183,13 +168,11 @@
                             </div>
 
                             <div class="video-aspect-wrapper">
-                                <!-- Quando o vídeo estiver pronto no Strapi, basta trocar o src abaixo -->
                                 <video id="playerVideoFV" controls preload="metadata">
                                     <source id="sourceVideoFV" src="URL_VIDEO_DASHBOARD_FORCA_DE_VENDAS.mp4" type="video/mp4">
                                     Seu navegador não suporta a reprodução de vídeos.
                                 </video>
 
-                                <!-- Camada visual elegante exibida enquanto o vídeo ainda está "Em breve" -->
                                 <div class="overlay-em-breve" id="overlayEmBreveFV">
                                     <div class="icone-play-breve">
                                         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -210,32 +193,26 @@
 
     </main>
 
-    <!-- 3. Rodapé Institucional com Suporte GB Resolve -->
-    <footer class="rodape-principal">
-        <div class="container-rodape">
-            <div class="rodape-info">
-                <span class="rodape-marca">Diretoria de Treinamento • Grupo Boticário</span>
-                <p>Ficou com alguma dúvida sobre os indicadores, plataformas ou trilhas da rede? Abra um chamado ou consulte nossa central de atendimento.</p>
+    <!-- 3. Rodapé Institucional -->
+    <footer class="rodape-subpagina">
+        <div class="container-rodape-sub">
+            <div class="rodape-texto-sub">
+                <h3 class="titulo-rodape-sub">Diretoria de Treinamento Grupo Boticário</h3>
+                <p class="subtitulo-rodape-sub">Ficou com alguma dúvida sobre os indicadores, a plataforma ou trilhas, pode abrir um chamado na nossa central de atendimento</p>
             </div>
 
-            <div class="rodape-acoes">
-                <a href="LINK_GB_RESOLVE" class="btn-gb-resolve" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                    <span>Dúvidas? GB Resolve</span>
-                    <svg class="seta-externa" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <div class="rodape-base">
-            <p>&copy; 2026 Grupo Boticário - Diretoria de Treinamento. Todos os direitos reservados.</p>
+            <a href="LINK_GB_RESOLVE" class="btn-gb-resolve" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>GB Resolve</span>
+                <svg class="seta-externa" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
         </div>
     </footer>
 
