@@ -299,3 +299,48 @@ function selecionarVideoFV(chave, botaoClicado) {
         if (overlay) overlay.classList.remove('oculto');
     }
 }
+// =========================================================
+// 6. SELETOR DE VÍDEO - SUBPÁGINA IAF ACADEMY
+// =========================================================
+
+const videosDashboardAcademy = {
+    'alta-lideranca': {
+        nome: 'Alta liderança',
+        tituloOverlay: 'Dashboard Academy — Alta liderança',
+        descricaoOverlay: 'O vídeo explicativo passo a passo estará disponível em breve.',
+        videoUrl: '' // Quando publicar no Strapi, coloque aqui a URL .mp4
+    }
+};
+
+function selecionarVideoAcademy(chave, botaoClicado) {
+    const config = videosDashboardAcademy[chave];
+    if (!config) return;
+
+    if (botaoClicado) {
+        botaoClicado.classList.add('ativo');
+    }
+
+    const legenda = document.getElementById('legendaVideoAcademy');
+    if (legenda) {
+        legenda.innerHTML = `Tutorial selecionado: <strong>${config.nome}</strong> • <span class="destaque-breve-topo">Em breve</span>`;
+    }
+
+    const overlay = document.getElementById('overlayEmBreveAcademy');
+    const tituloOverlay = document.getElementById('tituloOverlayVideoAcademy');
+    const descOverlay = document.getElementById('descricaoOverlayVideoAcademy');
+    const player = document.getElementById('playerVideoAcademy');
+    const source = document.getElementById('sourceVideoAcademy');
+
+    if (tituloOverlay) tituloOverlay.innerText = config.tituloOverlay;
+    if (descOverlay) descOverlay.innerText = config.descricaoOverlay;
+
+    if (config.videoUrl && config.videoUrl.trim() !== '') {
+        if (overlay) overlay.classList.add('oculto');
+        if (source && player) {
+            source.src = config.videoUrl;
+            player.load();
+        }
+    } else {
+        if (overlay) overlay.classList.remove('oculto');
+    }
+}
