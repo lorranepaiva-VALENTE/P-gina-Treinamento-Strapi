@@ -134,25 +134,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    max-width: 1000px;
-    margin: 70px auto;
-    padding: 0 5%;
+    gap: 44px;
+    width: 100%;
+    margin: 0;
+    padding: 70px max(5%, calc(50% - 600px));
+    background-color: var(--off-white);
+    background-image:
+        radial-gradient(circle at 8% 12%, rgba(38, 79, 236, 0.09) 0%, transparent 42%),
+        radial-gradient(circle at 92% 28%, rgba(255, 188, 130, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 15% 78%, rgba(1, 30, 56, 0.06) 0%, transparent 48%),
+        radial-gradient(rgba(1, 30, 56, 0.07) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
 }
 
 .card-texto-diretoria {
-    flex: 1;
+    flex: 1.45;
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
+    padding: 38px 46px;
+    border-radius: 10px;
     border-left: 6px solid var(--azul-royal);
-    box-shadow: 0 10px 30px rgba(1, 30, 56, 0.05);
+    box-shadow: 0 10px 30px rgba(1, 30, 56, 0.06);
 }
 
 .card-texto-diretoria h2 {
     font-size: 1.8rem;
     color: var(--azul-marinho);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     font-weight: 500;
 }
 
@@ -160,20 +167,21 @@ body {
     font-size: 1rem;
     font-weight: 500;
     color: var(--azul-marinho);
-    line-height: 1.5;
+    line-height: 1.65;
     margin-bottom: 16px;
 }
 
 .texto-secundario {
-    font-size: 0.9rem;
+    font-size: 0.94rem;
     font-weight: 400;
-    color: rgba(1, 30, 56, 0.7);
-    line-height: 1.5;
+    color: rgba(1, 30, 56, 0.75);
+    line-height: 1.65;
 }
 
 .foto-diretoria {
-    flex: 1;
+    flex: 0.85;
     position: relative;
+    z-index: 1;
     display: flex;
     justify-content: center;
 }
@@ -193,7 +201,7 @@ body {
 
 .foto-diretoria img {
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(1, 30, 56, 0.1);
 }
@@ -1867,6 +1875,38 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     gap: 12px;
     padding: 9px 16px;
 }
+/* 1. Mesmo fundo texturizado e iluminado da subpágina aplicado ao Bloco da Diretoria */
+.secao-diretoria,
+#diretoria {
+    background-color: var(--off-white);
+    background-image:
+        radial-gradient(circle at 8% 12%, rgba(38, 79, 236, 0.09) 0%, transparent 42%),
+        radial-gradient(circle at 92% 28%, rgba(255, 188, 130, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 15% 78%, rgba(1, 30, 56, 0.06) 0%, transparent 48%),
+        radial-gradient(rgba(1, 30, 56, 0.07) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+}
+
+/* 2. Centralização do menu flutuante após a remoção do título à esquerda */
+.menu-navegacao.menu-centralizado {
+    justify-content: center;
+}
+
+/* Destaque sutil para o link do Unibê no menu */
+.link-unibe-menu {
+    background-color: var(--azul-royal);
+    color: var(--off-white) !important;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.link-unibe-menu:hover {
+    background-color: var(--salmao);
+    color: var(--azul-marinho) !important;
+    transform: translateY(-1px);
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {
@@ -1885,7 +1925,17 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
 
     .bloco-diretoria {
         flex-direction: column;
-        text-align: center;
+        gap: 28px;
+        padding: 48px 5%;
+    }
+
+    .card-texto-diretoria {
+        width: 100%;
+        padding: 26px 22px;
+    }
+
+    .foto-diretoria {
+        width: 100%;
     }
 
     .card-iaf-destaque {
