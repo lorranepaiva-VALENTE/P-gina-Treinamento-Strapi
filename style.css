@@ -1861,6 +1861,12 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
 .btn-gb-resolve:hover .seta-externa {
     transform: translateX(4px);
 }
+/* Botão seletor compacto quando há apenas 1 vídeo abaixo do player */
+.btn-seletor-video.btn-seletor-compacto {
+    width: fit-content;
+    gap: 12px;
+    padding: 9px 16px;
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {
