@@ -1751,6 +1751,49 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     max-width: 680px;
     margin: 0;
 }
+/* Forma orgânica salmão atrás de "Treinamento da rede" no topo da subpágina */
+.marca-com-forma {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    z-index: 1;
+}
+
+.marca-com-forma::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-4deg);
+    width: 100%;
+    height: 120%;
+    background-color: var(--salmao);
+    opacity: 0.28;
+    border-radius: 38% 62% 55% 45% / 48% 36% 64% 52%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.marca-com-forma .logo-subpagina {
+    position: relative;
+    z-index: 1;
+}
+
+/* Tag RAIO-X DO INDICADOR correlacionada aos 3 bloquinhos */
+.bloco-regras-raiox {
+    padding-top: 8px;
+}
+
+.tag-raiox-regras {
+    margin-bottom: 14px;
+}
+
+/* Seletores posicionados logo abaixo do player de vídeo */
+.seletores-abaixo-video {
+    margin-top: 14px;
+    margin-bottom: 0;
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {

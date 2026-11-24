@@ -8,10 +8,12 @@
 </head>
 <body class="pagina-sub-iaf">
 
-    <!-- 1. Cabeçalho no Topo (Fixo no fluxo da subpágina, não acompanha a rolagem) -->
+    <!-- 1. Cabeçalho no Topo da Subpágina -->
     <header class="header-topo-subpagina">
         <div class="container-topo-sub">
-            <a href="index.html" class="logo-subpagina">Treinamento da rede</a>
+            <div class="marca-com-forma">
+                <a href="index.html" class="logo-subpagina">Treinamento da rede</a>
+            </div>
             <a href="index.html" class="btn-voltar-sub">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -25,12 +27,17 @@
     <!-- 2. Área Principal da Subpágina -->
     <main class="subpagina-iaf">
 
-        <!-- Cabeçalho da Seção -->
+        <!-- Cabeçalho da Seção (Sem tag inicial acima do título principal) -->
         <section class="cabecalho-subpagina-iaf">
             <div class="container-subpagina">
-                <div class="tag-secao-feed">
-                    <span class="ponto-salmao"></span>
-                    <span>Indicador IAF • Força de Vendas</span>
+                <div class="topo-navegacao-subpagina">
+                    <a href="index.html" class="link-voltar-topo">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <span>Voltar para a página inicial</span>
+                    </a>
                 </div>
                 <h1>Central do Indicador de Treinamento IAF</h1>
             </div>
@@ -40,11 +47,6 @@
         <section class="secao-raiox-iaf">
             <div class="container-subpagina">
                 <div class="card-raiox-principal">
-                    <div class="tag-secao-feed">
-                        <span class="ponto-salmao"></span>
-                        <span>RAIO-X DO INDICADOR</span>
-                    </div>
-
                     <h2>IAF Força de Vendas</h2>
 
                     <p class="descricao-raiox">
@@ -65,40 +67,47 @@
                         </div>
                     </div>
 
-                    <!-- 3 Cards/Destaques de Regras -->
-                    <div class="grid-regras-iaf">
-                        <div class="card-regra-iaf">
-                            <div class="icone-regra-iaf">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                            </div>
-                            <span class="label-regra">Periodicidade</span>
-                            <h4>Anual e Ciclo</h4>
+                    <!-- Tag RAIO-X DO INDICADOR correlacionada aos 3 bloquinhos -->
+                    <div class="bloco-regras-raiox">
+                        <div class="tag-secao-feed tag-raiox-regras">
+                            <span class="ponto-salmao"></span>
+                            <span>RAIO-X DO INDICADOR</span>
                         </div>
 
-                        <div class="card-regra-iaf">
-                            <div class="icone-regra-iaf">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                                </svg>
+                        <div class="grid-regras-iaf">
+                            <div class="card-regra-iaf">
+                                <div class="icone-regra-iaf">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                </div>
+                                <span class="label-regra">Periodicidade</span>
+                                <h4>Anual e Ciclo</h4>
                             </div>
-                            <span class="label-regra">Foco Principal</span>
-                            <h4>Produto, alavancas, atendimento e Vendas</h4>
-                        </div>
 
-                        <div class="card-regra-iaf">
-                            <div class="icone-regra-iaf">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                </svg>
+                            <div class="card-regra-iaf">
+                                <div class="icone-regra-iaf">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                    </svg>
+                                </div>
+                                <span class="label-regra">Foco Principal</span>
+                                <h4>Produto, alavancas, atendimento e Vendas</h4>
                             </div>
-                            <span class="label-regra">Carência</span>
-                            <h4>Todos os treinamentos são cobrados após 90 dias de contratação. (Exceto trilhas de onboarding que são cobradas desde o 1º dia)</h4>
+
+                            <div class="card-regra-iaf">
+                                <div class="icone-regra-iaf">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                                <span class="label-regra">Carência</span>
+                                <h4>Todos os treinamentos são cobrados após 90 dias de contratação. (Exceto trilhas de onboarding que são cobradas desde o 1º dia)</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -145,20 +154,8 @@
                         </div>
                     </div>
 
-                    <!-- Coluna Direita: Seletores de Vídeo + Player -->
+                    <!-- Coluna Direita: Player em cima + Seletores de Vídeo embaixo -->
                     <div class="coluna-player-seletor">
-                        <div class="seletores-video-iaf" role="tablist" aria-label="Vídeos explicativos do Dashboard">
-                            <button type="button" class="btn-seletor-video ativo" id="btnVideoFV" onclick="selecionarVideoFV('fv', this)">
-                                <span class="titulo-seletor-video">Força de Vendas</span>
-                                <span class="badge-em-breve">Em breve</span>
-                            </button>
-
-                            <button type="button" class="btn-seletor-video" id="btnVideoCiclo" onclick="selecionarVideoFV('ciclo', this)">
-                                <span class="titulo-seletor-video">Ciclo</span>
-                                <span class="badge-em-breve">Em breve</span>
-                            </button>
-                        </div>
-
                         <div class="player-tutorial-card">
                             <div class="player-tutorial-topo">
                                 <span class="indicador-reproducao"></span>
@@ -184,6 +181,19 @@
                                     <p id="descricaoOverlayVideoFV">O vídeo explicativo passo a passo estará disponível em breve.</p>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Seletores na parte inferior, abaixo do vídeo -->
+                        <div class="seletores-video-iaf seletores-abaixo-video" role="tablist" aria-label="Vídeos explicativos do Dashboard">
+                            <button type="button" class="btn-seletor-video ativo" id="btnVideoFV" onclick="selecionarVideoFV('fv', this)">
+                                <span class="titulo-seletor-video">Força de Vendas</span>
+                                <span class="badge-em-breve">Em breve</span>
+                            </button>
+
+                            <button type="button" class="btn-seletor-video" id="btnVideoCiclo" onclick="selecionarVideoFV('ciclo', this)">
+                                <span class="titulo-seletor-video">Ciclo</span>
+                                <span class="badge-em-breve">Em breve</span>
+                            </button>
                         </div>
                     </div>
 
