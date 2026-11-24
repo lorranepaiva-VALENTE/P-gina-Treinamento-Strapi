@@ -246,3 +246,56 @@ document.addEventListener('keydown', function (evento) {
         fecharModalCapacitacao();
     }
 });
+// =========================================================
+// 5. SELETOR DE VÍDEOS - SUBPÁGINA IAF FORÇA DE VENDAS
+// =========================================================
+
+const videosDashboardFV = {
+    fv: {
+        nome: 'Força de Vendas',
+        tituloOverlay: 'Dashboard Força de Vendas',
+        descricaoOverlay: 'O vídeo explicativo passo a passo estará disponível em breve.',
+        videoUrl: '' // Quando publicar no Strapi, coloque aqui a URL .mp4
+    },
+    ciclo: {
+        nome: 'Ciclo',
+        tituloOverlay: 'Dashboard Ciclo',
+        descricaoOverlay: 'O vídeo explicativo sobre o acompanhamento do Ciclo estará disponível em breve.',
+        videoUrl: '' // Quando publicar no Strapi, coloque aqui a URL .mp4
+    }
+};
+
+function selecionarVideoFV(chave, botaoClicado) {
+    const config = videosDashboardFV[chave];
+    if (!config) return;
+
+    const botoes = document.querySelectorAll('.btn-seletor-video');
+    botoes.forEach((btn) => btn.classList.remove('ativo'));
+    if (botaoClicado) {
+        botaoClicado.classList.add('ativo');
+    }
+
+    const legenda = document.getElementById('legendaVideoFV');
+    if (legenda) {
+        legenda.innerHTML = `Tutorial selecionado: <strong>${config.nome}</strong> • <span class="destaque-breve-topo">Em breve</span>`;
+    }
+
+    const overlay = document.getElementById('overlayEmBreveFV');
+    const tituloOverlay = document.getElementById('tituloOverlayVideoFV');
+    const descOverlay = document.getElementById('descricaoOverlayVideoFV');
+    const player = document.getElementById('playerVideoFV');
+    const source = document.getElementById('sourceVideoFV');
+
+    if (tituloOverlay) tituloOverlay.innerText = config.tituloOverlay;
+    if (descOverlay) descOverlay.innerText = config.descricaoOverlay;
+
+    if (config.videoUrl && config.videoUrl.trim() !== '') {
+        if (overlay) overlay.classList.add('oculto');
+        if (source && player) {
+            source.src = config.videoUrl;
+            player.load();
+        }
+    } else {
+        if (overlay) overlay.classList.remove('oculto');
+    }
+}
