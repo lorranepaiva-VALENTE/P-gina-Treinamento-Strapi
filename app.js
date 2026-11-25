@@ -527,3 +527,19 @@ if (formSugestao) {
             });
     });
 }
+// Carrega a contagem real de curtidas da planilha ao abrir a página
+function carregarCurtidasReais() {
+    if (!URL_PLANILHA_SHEETS || URL_PLANILHA_SHEETS.includes("COLE_AQUI")) return;
+
+    fetch(URL_PLANILHA_SHEETS)
+        .then(res => res.json())
+        .then(contagens => {
+            document.querySelectorAll("[data-contador-post]").forEach(span => {
+                const idPost = span.getAttribute("data-contador-post");
+                span.innerText = contagens[idPost] || 0;
+            });
+        })
+        .catch(err => console.error("Erro ao carregar curtidas:", err));
+}
+
+document.addEventListener("DOMContentLoaded", carregarCurtidasReais);
