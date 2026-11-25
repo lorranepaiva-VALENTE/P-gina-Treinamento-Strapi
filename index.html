@@ -8,22 +8,27 @@
 </head>
 <body>
 
-<!-- Menu Flutuante (Sem o título "Treinamento da rede" e com o link do Unibê) -->
-    <header class="header-flutuante">
-        <nav class="menu-navegacao menu-centralizado">
-            <ul class="lista-menu">
-                <li><a href="#diretoria">Diretoria</a></li>
-                <li><a href="#capacitacoes">Capacitações</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#indicador-iaf">Indicador IAF</a></li>
-                <li>
-                    <a href="LINK_UNIBE" target="_blank" rel="noopener noreferrer" class="link-unibe-menu">
-                        Unibê
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<!-- Menu Flutuante (Sem o título "Treinamento da rede", com Unibê e Sugestões) -->
+<header class="header-flutuante">
+    <nav class="menu-navegacao menu-centralizado">
+        <ul class="lista-menu">
+            <li><a href="#diretoria">Início</a></li>
+            <li><a href="#capacitacoes">Capacitações</a></li>
+            <li><a href="#noticias">Notícias</a></li>
+            <li><a href="#indicador-iaf">Indicador IAF</a></li>
+            <li>
+                <a href="https://unibe.grupoboticario.com.br/" target="_blank" rel="noopener noreferrer" class="link-unibe-menu" onclick="registrarCliquePlanilha('Clicou no Unibê')">
+                    Unibê
+                </a>
+            </li>
+            <li>
+                <button type="button" class="btn-sugestao" onclick="abrirModalSugestao()">
+                    Sugestões
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
 
     <!-- 2. Bloco 01 - Banner Institucional Fixo (Topo) -->
     <section class="banner-estatico" id="inicio">

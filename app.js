@@ -418,3 +418,90 @@ function registrarFeedbackTutorial(botaoClicado, avaliacao) {
         avaliacao: avaliacao
     });
 }
+// =========================================================
+// 8. INTEGRAÇÃO EXTRANET (USUÁRIO LOGADO) + GOOGLE SHEETS
+// =========================================================
+
+const URL_PLANILHA_SHEETS = "https://script.google.com/a/macros/grupoboticario.com.br/s/AKfycbwLmwb_mEqqxKqjTaxHQnJUvyMDBTP8mlHbd7OrKzelg_CeBU_kOd8Q8tkrOMNhVbOQFA/exec";
+
+// Tenta recuperar o usuário caso ele já tenha sido salvo ao navegar entre páginas
+let usuarioExtranet = JSON.parse(sessionStorage.getItem("usuario_extranet_gb")) || {
+    nome: "Visitante",
+    email: "",
+    cp: "",
+    loja: ""
+};
+
+let acessoRegistradoNestaPagina = false;
+
+// 1. Escuta o "Walkie-Talkie" enviado pela Extranet
+window.addEventListener("message", function (event) {
+    if (event.data && event.data.acao === "LOGIN_EXTRANET") {
+        // Ignora se já recebemos os dados nessa tela
+        if (usuarioExtranet.email === event.data.email && acessoRegistradoNestaPagina) {
+            return;
+        }
+
+        usuarioExtranet = {
+            nome: event.data.nome || "Visitante",
+            email: event.data.email || "",
+            cp: event.data.cp || "",
+            loja: event.data.loja || ""
+        };
+
+        // Salva na sessão para as subpáginas (IAF) também saberem quem é
+        sessionStorage.setItem("usuario_extranet_gb", JSON.stringify(usuarioExtranet));
+
+        // Registra o acesso à página atual assim que identifica o usuário
+        if (!acessoRegistradoNestaPagina) {
+            acessoRegistradoNestaPagina = true;
+            enviarParaPlanilha("navegacao", { acao: "Acessou a página" });
+        }
+    }
+});
+
+// Se já estava salvo na sessão (ex: entrou numa subpágina), registra o acesso direto
+if (usuarioExtranet.email && !acessoRegistradoNestaPagina) {
+    acessoRegistradoNestaPagina = true;
+    enviarParaPlanilha("navegacao", { acao: "Acessou a página" });
+}
+
+// 2. Função central que envia qualquer evento para a planilha
+function enviarParaPlanilha(tipo, dadosExtras = {}) {
+    if (!URL_PLANILHA_SHEETS || URL_PLANILHA_SHEETS.includes("COLE_AQUI")) return;
+
+    const formData = new FormData();
+    formData.append("tipo", tipo);
+    formData.append("nome", usuarioExtranet.nome);
+    formData.append("email", usuarioExtranet.email);
+    formData.append("cp", usuarioExtranet.cp);
+    formData.append("loja", usuarioExtranet.loja);
+    formData.append("pagina", document.title);
+
+    for (const chave in dadosExtras) {
+        formData.append(chave, dadosExtras[chave]);
+    }
+
+    return fetch(URL_PLANILHA_SHEETS, {
+        method: "POST",
+        body: formData
+    }).catch(err => console.error("Erro ao enviar para planilha:", err));
+}
+
+// 3. Registrar Sugestão (com o campo Tipo: Conteúdo ou Plataforma)
+function registrarSugestaoPlanilha(tipoSugestao, textoSugestao) {
+    return enviarParaPlanilha("sugestao", {
+        tipoSugestao: tipoSugestao,
+        sugestao: textoSugestao
+    });
+}
+
+// 4. Registrar Curtidas nas Notícias
+function registrarCurtidaPlanilha(tituloNoticia) {
+    enviarParaPlanilha("curtida", { noticia: tituloNoticia });
+}
+
+// 5. Registrar Cliques em Botões Importantes (Unibê, PDFs, Modais, GB Resolve)
+function registrarCliquePlanilha(nomeAcao) {
+    enviarParaPlanilha("navegacao", { acao: nomeAcao });
+}
