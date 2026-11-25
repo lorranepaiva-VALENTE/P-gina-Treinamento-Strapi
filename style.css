@@ -1907,6 +1907,69 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     color: var(--azul-marinho) !important;
     transform: translateY(-1px);
 }
+/* Feedback de Joinha / Não Joinha abaixo dos tutoriais */
+.box-feedback-tutorial {
+    margin-top: 14px;
+    padding: 12px 18px;
+    background-color: #ffffff;
+    border: 1px solid rgba(1, 30, 56, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.texto-feedback-tutorial {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--azul-marinho);
+}
+
+.botoes-feedback-tutorial {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-feedback-voto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(1, 30, 56, 0.18);
+    background-color: var(--off-white);
+    color: var(--azul-marinho);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-feedback-voto:hover {
+    background-color: var(--salmao);
+    border-color: var(--salmao);
+    transform: translateY(-2px);
+}
+
+.btn-feedback-voto.votado {
+    background-color: var(--azul-royal);
+    border-color: var(--azul-royal);
+    color: var(--off-white);
+}
+
+.msg-feedback-obrigado {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--azul-royal);
+    width: 100%;
+    display: none;
+}
+
+.msg-feedback-obrigado.visivel {
+    display: block;
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {

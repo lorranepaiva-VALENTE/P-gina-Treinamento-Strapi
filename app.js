@@ -389,3 +389,32 @@ function selecionarVideoLideranca(chave, botaoClicado) {
         if (overlay) overlay.classList.remove('oculto');
     }
 }
+// 6. Registrar Feedback dos Tutoriais (Joinha / Não Joinha)
+function registrarFeedbackTutorial(botaoClicado, avaliacao) {
+    const container = botaoClicado.closest(".box-feedback-tutorial");
+    if (!container) return;
+
+    // Evita múltiplos envios repetidos no mesmo clique
+    if (container.dataset.enviado === "true") return;
+    container.dataset.enviado = "true";
+
+    const nomeTutorial = container.dataset.tutorial || document.title;
+
+    // Destaca o botão escolhido
+    const botoes = container.querySelectorAll(".btn-feedback-voto");
+    botoes.forEach(btn => btn.classList.remove("votado"));
+    botaoClicado.classList.add("votado");
+
+    // Exibe mensagem de agradecimento
+    const msg = container.querySelector(".msg-feedback-obrigado");
+    if (msg) {
+        msg.innerText = "Obrigado pelo seu feedback!";
+        msg.classList.add("visivel");
+    }
+
+    // Envia para a aba "Feedback Tutoriais" no Google Sheets
+    enviarParaPlanilha("feedback_tutorial", {
+        tutorial: nomeTutorial,
+        avaliacao: avaliacao
+    });
+}
