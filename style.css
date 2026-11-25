@@ -2007,6 +2007,7 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
 
 /* Efeito azul apenas ao passar o mouse (hover) no Unibê e em Sugestões */
 .header-flutuante .link-unibe-menu:hover,
+.header-flutuante .lista-menu a:hover,
 .header-flutuante .btn-sugestao:hover {
     background-color: var(--azul-royal);
     color: #ffffff;
