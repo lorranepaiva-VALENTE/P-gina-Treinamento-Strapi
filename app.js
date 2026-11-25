@@ -14,13 +14,15 @@ function rolarFeed(direcao) {
 }
 
 function alternarCurtida(botao, idPost) {
-    const contador = botao.querySelector('.contagem-curtidas');
-    let numero = parseInt(contador.innerText, 10);
+    const contador = botao.querySelector('.contagem-curtidas, .contador-curtidas, span');
+    if (!contador) return;
+
+    let numero = parseInt(contador.innerText, 10) || 0;
     const estaCurtido = botao.classList.contains('curtido');
 
     if (estaCurtido) {
         botao.classList.remove('curtido');
-        contador.innerText = numero - 1;
+        contador.innerText = Math.max(0, numero - 1);
         registrarEngajamento(idPost, 'descurtir');
     } else {
         botao.classList.add('curtido');

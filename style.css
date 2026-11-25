@@ -2013,6 +2013,41 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     color: #ffffff;
     transform: none;
 }
+/* Força o menu flutuante a ficar fino e compacto */
+.header-flutuante {
+    padding: 0 !important;
+    width: fit-content !important;
+    margin: 10px auto !important;
+}
+
+.header-flutuante .menu-navegacao {
+    padding: 4px 10px !important;
+    min-height: unset !important;
+    height: auto !important;
+    width: fit-content !important;
+}
+
+.header-flutuante .lista-menu {
+    gap: 4px !important;
+}
+
+.header-flutuante .lista-menu a,
+.header-flutuante .link-unibe-menu,
+.header-flutuante .btn-sugestao {
+    font-size: 0.78rem !important;
+    padding: 4px 10px !important;
+    line-height: 1.2 !important;
+}
+/* Impede o botão GB Resolve de esticar na largura toda */
+.btn-gb-resolve {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    width: fit-content !important;
+    max-width: fit-content !important;
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {
