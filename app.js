@@ -26,6 +26,7 @@ function alternarCurtida(botao, idPost) {
         botao.classList.add('curtido');
         contador.innerText = numero + 1;
         registrarEngajamento(idPost, 'curtir');
+        registrarCurtidaPlanilha(idPost);
     }
 }
 
@@ -488,9 +489,11 @@ function enviarParaPlanilha(tipo, dadosExtras = {}) {
     }).catch(err => console.error("Erro ao enviar para planilha:", err));
 }
 
-// 3. Registrar Sugestão (com o campo Tipo: Conteúdo ou Plataforma)
-function registrarSugestaoPlanilha(tipoSugestao, textoSugestao) {
+// 3. Registrar Sugestão (agora com Cargo e Código Pai)
+function registrarSugestaoPlanilha(cargo, codigoPai, tipoSugestao, textoSugestao) {
     return enviarParaPlanilha("sugestao", {
+        cargo: cargo,
+        codigoPai: codigoPai,
         tipoSugestao: tipoSugestao,
         sugestao: textoSugestao
     });
@@ -504,4 +507,23 @@ function registrarCurtidaPlanilha(tituloNoticia) {
 // 5. Registrar Cliques em Botões Importantes (Unibê, PDFs, Modais, GB Resolve)
 function registrarCliquePlanilha(nomeAcao) {
     enviarParaPlanilha("navegacao", { acao: nomeAcao });
+}
+// Conexão do Formulário de Sugestão com a Planilha
+const formSugestao = document.getElementById("formSugestao");
+
+if (formSugestao) {
+    formSugestao.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const cargoDigitado = document.getElementById("campoCargo").value;
+        const codigoPaiDigitado = document.getElementById("campoCp").value;
+        const tipoSelecionado = document.getElementById("campoAssunto").value;
+        const textoDigitado = document.getElementById("campoComentario").value;
+
+        registrarSugestaoPlanilha(cargoDigitado, codigoPaiDigitado, tipoSelecionado, textoDigitado)
+            .then(() => {
+                alert("Sugestão enviada com sucesso!");
+                formSugestao.reset();
+            });
+    });
 }

@@ -1970,6 +1970,48 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
 .msg-feedback-obrigado.visivel {
     display: block;
 }
+/* Menu flutuante mais fino e proporcional */
+.header-flutuante .menu-navegacao {
+    padding: 6px 18px;
+    min-height: auto;
+    justify-content: center;
+}
+
+.header-flutuante .lista-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Padroniza todos os links e o botão Sugestões (transparentes por padrão) */
+.header-flutuante .lista-menu a,
+.header-flutuante .link-unibe-menu,
+.header-flutuante .btn-sugestao {
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    color: var(--off-white);
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Efeito azul apenas ao passar o mouse (hover) no Unibê e em Sugestões */
+.header-flutuante .link-unibe-menu:hover,
+.header-flutuante .btn-sugestao:hover {
+    background-color: var(--azul-royal);
+    color: #ffffff;
+    transform: none;
+}
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
     .menu-navegacao {
