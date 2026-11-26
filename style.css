@@ -2570,9 +2570,9 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     padding: 6px 12px;
     font-size: 0.82rem;
     font-weight: 500;
-    color: var(--azul-marinho, #011e38);
-    background-color: rgba(1, 30, 56, 0.05);
-    border: 1px solid rgba(1, 30, 56, 0.16);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 6px;
     text-decoration: none;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
