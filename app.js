@@ -545,3 +545,16 @@ function carregarCurtidasReais() {
 }
 
 document.addEventListener("DOMContentLoaded", carregarCurtidasReais);
+// Mantém o destaque azul no item selecionado do menu
+document.addEventListener("DOMContentLoaded", function () {
+    const itensMenu = document.querySelectorAll(
+        ".header-flutuante .lista-menu a, .header-flutuante .link-unibe-menu, .header-flutuante .btn-sugestao"
+    );
+
+    itensMenu.forEach(item => {
+        item.addEventListener("click", function () {
+            itensMenu.forEach(el => el.classList.remove("ativo"));
+            this.classList.add("ativo");
+        });
+    });
+});

@@ -128,6 +128,21 @@ body {
     object-position: center;
     display: block;
 }
+.SEU-BANNER {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+}
+
+/* Remove eventual corte/onda decorativa criada por pseudo-elemento na base */
+.SEU-BANNER::after,
+.SEU-BANNER::before {
+    clip-path: none !important;
+    border-radius: 0 !important;
+}
 
 /* 3. Bloco Diretoria */
 .bloco-diretoria {
@@ -148,12 +163,12 @@ body {
 }
 
 .card-texto-diretoria {
-    flex: 1.45;
-    background-color: #ffffff;
-    padding: 38px 46px;
-    border-radius: 10px;
-    border-left: 6px solid var(--azul-royal);
-    box-shadow: 0 10px 30px rgba(1, 30, 56, 0.06);
+    flex: 1;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    border-left: none;
+    box-shadow: none;
 }
 
 .card-texto-diretoria h2 {
@@ -179,7 +194,7 @@ body {
 }
 
 .foto-diretoria {
-    flex: 0.85;
+    flex: 1.15;
     position: relative;
     z-index: 1;
     display: flex;
@@ -201,7 +216,8 @@ body {
 
 .foto-diretoria img {
     width: 100%;
-    max-width: 380px;
+    max-width: 520px;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(1, 30, 56, 0.1);
 }
@@ -2047,6 +2063,33 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     max-width: fit-content !important;
     padding: 10px 20px !important;
     font-size: 0.9rem !important;
+}
+/* Alinhamento lateral dos itens do menu */
+.header-flutuante .lista-menu {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+}
+
+.header-flutuante .lista-menu a,
+.header-flutuante .link-unibe-menu,
+.header-flutuante .btn-sugestao {
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+
+.header-flutuante .icone-menu {
+    flex-shrink: 0;
+}
+
+/* Mantém a mesma cor azul de destaque do hover quando o item estiver ativo */
+.header-flutuante .lista-menu a.ativo,
+.header-flutuante .link-unibe-menu.ativo,
+.header-flutuante .btn-sugestao.ativo {
+    background-color: var(--azul-royal) !important;
+    color: #ffffff !important;
 }
 /* Responsividade para celulares e tablets */
 @media (max-width: 768px) {
