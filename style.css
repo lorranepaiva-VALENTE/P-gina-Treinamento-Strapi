@@ -2534,3 +2534,19 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
         gap: 20px;
     }
 }
+/* Remove o formato de card e estica o fundo azul de ponta a ponta no bloco IAF */
+.bloco-iaf {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.card-iaf-destaque {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 72px max(5%, calc(50% - 600px)) !important;
+}
