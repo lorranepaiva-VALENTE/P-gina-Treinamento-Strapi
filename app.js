@@ -558,3 +558,78 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+// =========================================================
+// MODAL DE STORIES — PLATAFORMA UNIBÊ
+// =========================================================
+const STORIES_UNIBE = {
+    pendencias: {
+        titulo: "Consultando pendências",
+        video: "https://helpcenter-strapi.grupoboticario.com.br/teste_storeis_112bc934ea.mp4" // Substitua pelo caminho real do vídeo
+    },
+    app: {
+        titulo: "Baixando o app",
+        video: "https://helpcenter-strapi.grupoboticario.com.br/teste_storeis_112bc934ea.mp4"
+    },
+    cursos: {
+        titulo: "Buscando cursos",
+        video: "https://helpcenter-strapi.grupoboticario.com.br/teste_storeis_112bc934ea.mp4"
+    },
+    menu: {
+        titulo: "Menu lateral",
+        video: "vhttps://helpcenter-strapi.grupoboticario.com.br/teste_storeis_112bc934ea.mp4"
+    }
+};
+
+function abrirStoryUnibe(idStory) {
+    const story = STORIES_UNIBE[idStory];
+    const modal = document.getElementById("modalStoryUnibe");
+    const tituloEl = document.getElementById("unibeModalTitulo");
+    const videoEl = document.getElementById("unibeModalVideo");
+    const fallbackEl = document.getElementById("unibeModalFallback");
+
+    if (!story || !modal) return;
+
+    tituloEl.innerText = story.titulo;
+    modal.classList.add("aberto");
+    document.body.style.overflow = "hidden";
+
+    if (typeof registrarCliquePlanilha === "function") {
+        registrarCliquePlanilha("Abriu Story Unibê: " + story.titulo);
+    }
+
+    if (story.video) {
+        fallbackEl.style.display = "none";
+        videoEl.style.display = "block";
+        videoEl.src = story.video;
+        videoEl.load();
+        videoEl.play().catch(() => {});
+
+        videoEl.onerror = function () {
+            videoEl.style.display = "none";
+            fallbackEl.style.display = "flex";
+        };
+    } else {
+        videoEl.style.display = "none";
+        fallbackEl.style.display = "flex";
+    }
+}
+
+function fecharStoryUnibe(event) {
+    if (event && event.target !== event.currentTarget) return;
+
+    const modal = document.getElementById("modalStoryUnibe");
+    const videoEl = document.getElementById("unibeModalVideo");
+
+    if (modal) modal.classList.remove("aberto");
+    document.body.style.overflow = "";
+
+    if (videoEl) {
+        videoEl.pause();
+        videoEl.removeAttribute("src");
+        videoEl.load();
+    }
+}
+
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") fecharStoryUnibe();
+});

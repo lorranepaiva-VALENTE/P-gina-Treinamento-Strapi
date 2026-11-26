@@ -70,6 +70,136 @@
             <img src="https://iili.io/nSYM6uI.gif" alt="Diretoria de Treinamento do Grupo Boticário">
         </div>
     </section>
+    <!-- =========================================================
+     SEÇÃO PLATAFORMA UNIBÊ + STORIES
+     ========================================================= -->
+<section id="plataforma-unibe" class="secao-unibe">
+    <div class="unibe-container">
+
+        <!-- 1. TOPO EM 2 COLUNAS -->
+        <div class="unibe-grid-topo">
+            
+            <!-- Coluna Esquerda: Texto e Botão -->
+            <div class="unibe-col-texto">
+                <h2 class="unibe-titulo">Conheça nossa plataforma de treinamento: Unibê</h2>
+                <p class="unibe-descricao">
+                    A Unibê é o ambiente multicanal onde toda a rede acessa trilhas, realiza cursos obrigatórios e acompanha sua evolução de aprendizagem em um só lugar.
+                </p>
+                <a href="https://unibe.grupoboticario.com.br/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="unibe-btn-acesso"
+                   onclick="if(typeof registrarCliquePlanilha === 'function') registrarCliquePlanilha('Clicou em Acessar Unibê (Seção)')">
+                    Acessar plataforma Unibê
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Coluna Direita: 2 Cards Flutuantes Interativos -->
+            <div class="unibe-col-cards">
+                <!-- Card 1 (Fundo / Superior Esquerdo) -->
+                <div class="unibe-card-flutuante unibe-card-1">
+                    <!-- Troque o src pelo print ou GIF da plataforma -->
+                    <img src="img/unibe-preview-1.png" alt="Tela inicial da plataforma Unibê" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="unibe-placeholder-img">
+                        <span>Print / GIF Unibê 01</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Frente / Inferior Direito) -->
+                <div class="unibe-card-flutuante unibe-card-2">
+                    <!-- Troque o src pelo segundo print ou GIF da plataforma -->
+                    <img src="img/unibe-preview-2.png" alt="Trilhas e cursos na plataforma Unibê" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="unibe-placeholder-img">
+                        <span>Print / GIF Unibê 02</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 2. FAIXA INFERIOR: PÍLULAS RÁPIDAS (STORIES) -->
+        <div class="unibe-stories-wrapper">
+            <p class="unibe-stories-subtitulo">Dicas rápidas e tutoriais</p>
+
+            <div class="unibe-stories-lista">
+                <!-- Story 1 -->
+                <button type="button" class="unibe-story-item" onclick="abrirStoryUnibe('pendencias')">
+                    <span class="unibe-story-anel">
+                        <span class="unibe-story-circulo">
+                            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 11l3 3L22 4"></path>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="unibe-story-titulo">Consultando pendências</span>
+                </button>
+
+                <!-- Story 2 -->
+                <button type="button" class="unibe-story-item" onclick="abrirStoryUnibe('app')">
+                    <span class="unibe-story-anel">
+                        <span class="unibe-story-circulo">
+                            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="unibe-story-titulo">Baixando o app</span>
+                </button>
+
+                <!-- Story 3 -->
+                <button type="button" class="unibe-story-item" onclick="abrirStoryUnibe('cursos')">
+                    <span class="unibe-story-anel">
+                        <span class="unibe-story-circulo">
+                            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="unibe-story-titulo">Buscando cursos</span>
+                </button>
+
+                <!-- Story 4 -->
+                <button type="button" class="unibe-story-item" onclick="abrirStoryUnibe('menu')">
+                    <span class="unibe-story-anel">
+                        <span class="unibe-story-circulo">
+                            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="3" x2="9" y2="21"></line>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="unibe-story-titulo">Menu lateral</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MODAL VERTICAL 9:16 DOS STORIES UNIBÊ -->
+<div id="modalStoryUnibe" class="unibe-modal-overlay" onclick="fecharStoryUnibe(event)">
+    <div class="unibe-modal-story" onclick="event.stopPropagation()">
+        <div class="unibe-modal-topo">
+            <span id="unibeModalTitulo" class="unibe-modal-titulo">Tutorial</span>
+            <button type="button" class="unibe-modal-fechar" onclick="fecharStoryUnibe()" aria-label="Fechar">
+                &times;
+            </button>
+        </div>
+        <div class="unibe-modal-video-box">
+            <video id="unibeModalVideo" controls playsinline></video>
+            <div id="unibeModalFallback" class="unibe-modal-fallback">
+                <span>Vídeo em breve</span>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Bloco 03: Nossas Capacitações -->
     <section class="modelos-atendimento" id="capacitacoes">
