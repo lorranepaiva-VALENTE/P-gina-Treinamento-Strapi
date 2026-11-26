@@ -2550,3 +2550,8 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     box-shadow: none !important;
     padding: 72px max(5%, calc(50% - 600px)) !important;
 }
+/* Diminui a largura dos botões de subpáginas no bloco IAF */
+.lista-cards-indicadores {
+    max-width: 380px !important; /* Ajuste entre 340px e 400px se quiser mais fino ou mais largo */
+    width: 100%;
+}
