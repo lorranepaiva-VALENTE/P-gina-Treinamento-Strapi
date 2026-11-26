@@ -31,7 +31,6 @@
         <!-- Cabeçalho da Seção -->
         <section class="cabecalho-subpagina-iaf">
             <div class="container-subpagina">
-                <h1>Central do Indicador de Treinamento IAF</h1>
             </div>
         </section>
 
@@ -59,7 +58,7 @@
                         </div>
                     </div>
 
-                    <!-- Tag RAIO-X DO INDICADOR correlacionada aos 3 bloquinhos -->
+                   <!-- Tag RAIO-X DO INDICADOR correlacionada aos 3 bloquinhos -->
                     <div class="bloco-regras-raiox">
                         <div class="tag-secao-feed tag-raiox-regras">
                             <span class="ponto-salmao"></span>
@@ -67,6 +66,7 @@
                         </div>
 
                         <div class="grid-regras-iaf">
+                            <!-- 1. Periodicidade -->
                             <div class="card-regra-iaf">
                                 <div class="icone-regra-iaf">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -80,16 +80,7 @@
                                 <h4>Anual e Ciclo</h4>
                             </div>
 
-                            <div class="card-regra-iaf">
-                                <div class="icone-regra-iaf">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                                    </svg>
-                                </div>
-                                <span class="label-regra">Foco Principal</span>
-                                <h4>Produto, alavancas, atendimento e Vendas</h4>
-                            </div>
-
+                            <!-- 2. Carência -->
                             <div class="card-regra-iaf">
                                 <div class="icone-regra-iaf">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -99,6 +90,36 @@
                                 </div>
                                 <span class="label-regra">Carência</span>
                                 <h4>Todos os treinamentos são cobrados após 90 dias de contratação. (Exceto trilhas de onboarding que são cobradas desde o 1º dia)</h4>
+                            </div>
+
+                            <!-- 3. Material de apoio -->
+                            <div class="card-regra-iaf">
+                                <div class="icone-regra-iaf">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                    </svg>
+                                </div>
+                                <span class="label-regra">Material de apoio</span>
+                                <p style="font-size: 0.85rem; margin: 6px 0 0; opacity: 0.85; line-height: 1.4;">Acesse a FAQ e o Book IAF para consultar mais detalhes.</p>
+                                <div class="raiox-acoes-apoio">
+                                    <a href="https://extranet.grupoboticario.com.br/mf/landing-page/iaf" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="btn-raiox-clean"
+                                       onclick="if(typeof registrarCliquePlanilha === 'function') registrarCliquePlanilha('Clicou em Book IAF (Raio-X)')">
+                                        Book IAF
+                                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                    </a>
+                                    <a href="LINK_DA_FAQ_AQUI" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="btn-raiox-clean"
+                                       onclick="if(typeof registrarCliquePlanilha === 'function') registrarCliquePlanilha('Clicou em FAQ (Raio-X)')">
+                                        FAQ
+                                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

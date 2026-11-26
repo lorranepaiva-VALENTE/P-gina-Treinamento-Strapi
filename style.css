@@ -2555,3 +2555,31 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     max-width: 380px !important; /* Ajuste entre 340px e 400px se quiser mais fino ou mais largo */
     width: 100%;
 }
+/* Botões clean dentro do card Material de apoio (Raio-X das subpáginas) */
+.raiox-acoes-apoio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.btn-raiox-clean {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--azul-marinho, #011e38);
+    background-color: rgba(1, 30, 56, 0.05);
+    border: 1px solid rgba(1, 30, 56, 0.16);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-raiox-clean:hover {
+    background-color: var(--azul-royal, #264fec);
+    border-color: var(--azul-royal, #264fec);
+    color: #ffffff;
+}
