@@ -2064,24 +2064,38 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     padding: 10px 20px !important;
     font-size: 0.9rem !important;
 }
-/* Alinhamento lateral dos itens do menu */
+/* Mantém o menu na horizontal e alinha no canto superior direito */
+.header-flutuante {
+    left: auto !important;
+    right: 24px !important;
+    transform: none !important;
+    margin: 12px 24px 0 auto !important;
+}
+
 .header-flutuante .lista-menu {
-    flex-direction: column !important;
-    align-items: stretch !important;
+    flex-direction: row !important;
+    align-items: center !important;
     gap: 6px !important;
 }
 
 .header-flutuante .lista-menu a,
 .header-flutuante .link-unibe-menu,
 .header-flutuante .btn-sugestao {
-    justify-content: flex-start !important;
-    gap: 8px !important;
-    width: 100% !important;
-    text-align: left !important;
+    width: auto !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
 }
 
 .header-flutuante .icone-menu {
     flex-shrink: 0;
+}
+
+/* Mantém a cor azul de destaque quando o item estiver ativo */
+.header-flutuante .lista-menu a.ativo,
+.header-flutuante .link-unibe-menu.ativo,
+.header-flutuante .btn-sugestao.ativo {
+    background-color: var(--azul-royal) !important;
+    color: #ffffff !important;
 }
 
 /* Mantém a mesma cor azul de destaque do hover quando o item estiver ativo */
