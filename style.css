@@ -2322,10 +2322,16 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
 }
 
 .unibe-card-2 {
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-    animation: unibeFlutuarB 6.4s ease-in-out infinite;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    width: auto !important;
+    max-width: 220px;
+    aspect-ratio: auto !important;
+    bottom: -15px !important;  /* Sobe ou desce a logo */
+    right: 110px !important;   /* Quanto maior o número, mais para a esquerda ela vai */
+    z-index: 5 !important;     /* Garante que fique por cima do primeiro card */
 }
 
 .unibe-card-flutuante:hover {
