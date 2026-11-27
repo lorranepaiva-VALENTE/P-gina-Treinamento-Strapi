@@ -2678,3 +2678,10 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
 .modal-bloco-destaque p:last-child {
     margin-bottom: 0;
 }
+/* Mantém as quebras de parágrafo do app.js e evita pop-up esticado */
+.modal-conteudo p,
+#modal-capacitacao p {
+    white-space: pre-line;
+    line-height: 1.55;
+    font-size: 0.92rem;
+}
