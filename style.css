@@ -2583,3 +2583,31 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     border-color: var(--azul-royal, #264fec);
     color: #ffffff;
 }
+/* Deixa o 2º card da Unibê totalmente transparente para a logo flutuante */
+.unibe-card-2 {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    width: auto !important;
+    max-width: 220px; /* Ajuste o tamanho da logo aqui se quiser maior ou menor */
+    aspect-ratio: auto !important;
+    bottom: -10px;
+    right: 10px;
+}
+
+.unibe-card-2 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain !important;
+    filter: drop-shadow(0 14px 24px rgba(1, 30, 56, 0.22));
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.unibe-card-2:hover {
+    box-shadow: none !important;
+}
+
+.unibe-card-2:hover img {
+    filter: drop-shadow(0 20px 30px rgba(1, 30, 56, 0.3));
+}
