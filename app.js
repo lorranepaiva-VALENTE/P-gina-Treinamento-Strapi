@@ -564,7 +564,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const STORIES_UNIBE = {
     pendencias: {
         titulo: "Consultando pendências",
-        video: "https://helpcenter-strapi.grupoboticario.com.br/teste_storeis_112bc934ea.mp4" // Substitua pelo caminho real do vídeo
+        video: "https://helpcenter-strapi.grupoboticario.com.br/Treinamentos_pendentes_Unibe_b6bbe4a95d.mp4" // Substitua pelo caminho real do vídeo
     },
     app: {
         titulo: "Baixando o app",
