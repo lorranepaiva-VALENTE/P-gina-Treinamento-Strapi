@@ -146,8 +146,8 @@ const dadosCapacitacoes = {
     },
     loja: {
         titulo: 'Canal Loja',
-        oQueE: 'Acreditamos que uma experiência extraordinária para o cliente começa com uma força de vendas preparada, confiante e protagonista.\n\nPor isso, desenvolvemos soluções de aprendizagem conectadas à realidade das nossas lojas, traduzindo a estratégia do negócio em comportamentos e práticas que fazem a diferença no dia a dia.\n\nDos modelos de atendimento Botileza e Chega Junto à capacitação de ciclos, serviços, técnicas de vendas e novas alavancas comerciais, apoiamos o desenvolvimento contínuo das nossas equipes e lideranças para encantar, fidelizar e potencializar resultados.',
-        comoApoia: 'Tudo o que você precisa para evoluir a experiência e a performance da sua loja, em um só lugar!\n\nExplore nossos modelos de atendimento, conheça as soluções de capacitação, fique por dentro dos lançamentos e novidades de treinamento e acesse as trilhas de aprendizagem disponíveis na Unibê.\n\nAproveite esses recursos para desenvolver sua equipe, fortalecer os comportamentos no dia a dia e transformar conhecimento em resultados na loja.',
+        oQueE: 'Preparamos nossa força de vendas e lideranças com soluções conectadas à rotina das lojas. Dos modelos de atendimento Botileza e Chega Junto às capacitações de ciclos, serviços, técnicas de vendas e novas alavancas comerciais, apoiamos o desenvolvimento contínuo do time para encantar clientes e impulsionar resultados.',
+        comoApoia: 'Tudo para evoluir a performance da sua loja em um só lugar! Explore os modelos de atendimento, confira as novidades de treinamento e acesse as trilhas na Unibê para desenvolver sua equipe no dia a dia.',
         btn1Texto: 'Acessar página Botileza',
         btn1Link: 'https://extranet.grupoboticario.com.br/mf/landing-page/botileza',
         btn2Texto: 'Acessar página Chega Junto',
