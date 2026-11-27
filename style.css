@@ -2611,3 +2611,38 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
 .unibe-card-2:hover img {
     filter: drop-shadow(0 20px 30px rgba(1, 30, 56, 0.3));
 }
+/* Gatilho sutil de vídeo (mini selo Play) no canto inferior direito de cada story */
+.story-anel,
+.unibe-story-anel,
+.story-circulo {
+    position: relative;
+}
+
+.story-anel::after,
+.unibe-story-anel::after,
+.story-circulo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--azul-royal, #264fec);
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(1, 30, 56, 0.25);
+    /* Ícone de Play branco centralizado em SVG */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpolygon points='8 5 19 12 8 19 8 5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 55% center;
+    background-size: 10px 10px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Leve destaque ao passar o mouse no story */
+.story-anel:hover::after,
+.unibe-story-anel:hover::after,
+.story-circulo:hover::after {
+    transform: scale(1.15);
+    background-color: var(--azul-marinho, #011e38);
+}
