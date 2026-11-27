@@ -2725,3 +2725,44 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
         grid-template-columns: 1fr !important;
     }
 }
+/* Banner de alerta no topo das subpáginas de indicadores */
+.alerta-topo-indicador {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    max-width: 1200px;
+    margin: 20px auto 24px;
+    padding: 16px 20px;
+    background-color: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 4px solid #d97706;
+    border-radius: 10px;
+    color: #78350f;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.08);
+}
+
+.alerta-topo-icone {
+    flex-shrink: 0;
+    color: #d97706;
+    margin-top: 2px;
+}
+
+.alerta-topo-indicador p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #78350f;
+}
+
+.alerta-topo-indicador strong {
+    color: #92400e;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .alerta-topo-indicador {
+        margin: 16px;
+        padding: 14px 16px;
+        gap: 10px;
+    }
+}
