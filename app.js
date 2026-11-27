@@ -146,12 +146,12 @@ const dadosCapacitacoes = {
     },
     loja: {
         titulo: 'Canal Loja',
-        oQueE: 'Capacitação voltada para a equipe de loja, liderança e multiplicadoras, com foco em realizar vendas da melhor forma possível, sempre centradas no cliente.',
-        comoApoia: 'Aprofunda o conhecimento no Modelo de Atendimento O Boticário e Chega Junto (QDB), além do programa de fidelidade, garantindo resultados sustentáveis e de qualidade.',
-        btn1Texto: 'Acessar Botileza (O Boticário)',
-        btn1Link: 'LINK_BOTILEZA_BOTICARIO',
-        btn2Texto: 'Acessar Chega Junto (QDB)',
-        btn2Link: 'LINK_CHEGA_JUNTO_QDB'
+        oQueE: 'Acreditamos que uma experiência extraordinária para o cliente começa com uma força de vendas preparada, confiante e protagonista.\n\nPor isso, desenvolvemos soluções de aprendizagem conectadas à realidade das nossas lojas, traduzindo a estratégia do negócio em comportamentos e práticas que fazem a diferença no dia a dia.\n\nDos modelos de atendimento Botileza e Chega Junto à capacitação de ciclos, serviços, técnicas de vendas e novas alavancas comerciais, apoiamos o desenvolvimento contínuo das nossas equipes e lideranças para encantar, fidelizar e potencializar resultados.',
+        comoApoia: 'Tudo o que você precisa para evoluir a experiência e a performance da sua loja, em um só lugar!\n\nExplore nossos modelos de atendimento, conheça as soluções de capacitação, fique por dentro dos lançamentos e novidades de treinamento e acesse as trilhas de aprendizagem disponíveis na Unibê.\n\nAproveite esses recursos para desenvolver sua equipe, fortalecer os comportamentos no dia a dia e transformar conhecimento em resultados na loja.',
+        btn1Texto: 'Acessar página Botileza',
+        btn1Link: 'https://extranet.grupoboticario.com.br/mf/landing-page/botileza',
+        btn2Texto: 'Acessar página Chega Junto',
+        btn2Link: 'https://extranet.grupoboticario.com.br/mf/landing-page/chegajunto'
     },
     lideranca: {
         titulo: 'Liderança & Backoffice',

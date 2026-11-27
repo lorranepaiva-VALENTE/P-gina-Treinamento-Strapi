@@ -2646,3 +2646,35 @@ body.pagina-sub-iaf .secao-tutorial-faq-iaf {
     transform: scale(1.15);
     background-color: var(--azul-marinho, #011e38);
 }
+/* Estilização interna do pop-up de Capacitações */
+.modal-bloco-texto h3 {
+    font-size: 1.25rem;
+    color: var(--azul-marinho, #011e38);
+    margin: 0 0 12px 0;
+}
+
+.modal-bloco-texto p,
+.modal-bloco-destaque p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #334155;
+    margin: 0 0 10px 0;
+}
+
+.modal-bloco-destaque {
+    margin-top: 18px;
+    padding: 16px 18px;
+    background-color: rgba(38, 79, 236, 0.05);
+    border-left: 3px solid var(--azul-royal, #264fec);
+    border-radius: 8px;
+}
+
+.modal-bloco-destaque h4 {
+    font-size: 1.05rem;
+    color: var(--azul-royal, #264fec);
+    margin: 0 0 10px 0;
+}
+
+.modal-bloco-destaque p:last-child {
+    margin-bottom: 0;
+}
